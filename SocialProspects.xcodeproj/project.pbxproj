@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		FF57B93D1529A59600991073 /* HotList.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF57B93C1529A59600991073 /* HotList.plist */; };
+		FF57B9411529C05000991073 /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF57B93F1529C05000991073 /* LocationViewController.m */; };
+		FF57B9421529C05000991073 /* LocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF57B9401529C05000991073 /* LocationViewController.xib */; };
 		FF7520F715291C9A008291D2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FF7520F515291C9A008291D2 /* InfoPlist.strings */; };
 		FF7520F915291C9A008291D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7520F815291C9A008291D2 /* main.m */; };
 		FF7520FD15291C9A008291D2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7520FC15291C9A008291D2 /* AppDelegate.m */; };
@@ -36,6 +38,9 @@
 
 /* Begin PBXFileReference section */
 		FF57B93C1529A59600991073 /* HotList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HotList.plist; sourceTree = "<group>"; };
+		FF57B93E1529C05000991073 /* LocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationViewController.h; sourceTree = "<group>"; };
+		FF57B93F1529C05000991073 /* LocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationViewController.m; sourceTree = "<group>"; };
+		FF57B9401529C05000991073 /* LocationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationViewController.xib; sourceTree = "<group>"; };
 		FF7520E815291C9A008291D2 /* SocialProspects.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialProspects.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF7520EC15291C9A008291D2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FF7520EE15291C9A008291D2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -162,6 +167,9 @@
 				FF7521211529213D008291D2 /* MainViewController.h */,
 				FF7521221529213D008291D2 /* MainViewController.m */,
 				FF7521231529213D008291D2 /* MainViewController.xib */,
+				FF57B93E1529C05000991073 /* LocationViewController.h */,
+				FF57B93F1529C05000991073 /* LocationViewController.m */,
+				FF57B9401529C05000991073 /* LocationViewController.xib */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -239,6 +247,7 @@
 				FF7520F715291C9A008291D2 /* InfoPlist.strings in Resources */,
 				FF7521251529213D008291D2 /* MainViewController.xib in Resources */,
 				FF57B93D1529A59600991073 /* HotList.plist in Resources */,
+				FF57B9421529C05000991073 /* LocationViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +285,7 @@
 				FF7520F915291C9A008291D2 /* main.m in Sources */,
 				FF7520FD15291C9A008291D2 /* AppDelegate.m in Sources */,
 				FF7521241529213D008291D2 /* MainViewController.m in Sources */,
+				FF57B9411529C05000991073 /* LocationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

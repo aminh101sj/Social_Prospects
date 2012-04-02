@@ -7,6 +7,7 @@
 //
 
 #import "MainViewController.h"
+#import "LocationViewController.h"
 
 @interface MainViewController ()
 
@@ -33,11 +34,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    /*self.list = [[NSArray alloc] 
-                 initWithObjects:@"Philz Coffee", 
-                 @"Smoke Eaters", nil];*/
-    self.title = @"Social Prospects";
     
+    self.title = @"Social Prospects";
     
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"HotList" ofType:@"plist"];
 	placesData = [[NSMutableArray alloc] initWithContentsOfFile:filePath];
@@ -53,8 +51,8 @@
 		count++;
         NSString *aName =[NSString stringWithString:[place objectForKey:@"name"]];
 		NSString *aKey = [NSString stringWithString:[place objectForKey:@"key"]];
-        NSLog(@"%@",aName);
-        NSLog(@"%@",aKey);
+        //NSLog(@"%@",aName);
+        //NSLog(@"%@",aKey);
         [titleToKey setObject:aKey forKey:aName];
 		[keyToTitle setObject:aName forKey:aKey];
         [keyToObject setObject:@"" forKey:aKey];
@@ -62,8 +60,7 @@
     
     placesList = [[NSMutableArray alloc] initWithArray:[titleToKey allKeys]];
     
-    NSLog(@"%@",placesList);
-    //placesList = [[NSMutableArray alloc] initWithArray:[titleToKey allKeys]];
+    //NSLog(@"%@",placesList);
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -94,36 +91,24 @@
     return 1;
 }
 
-/*- (NSInteger)tableView:(UITableView *)
-tableView numberOfRowsInSection:(NSInteger)section
-{
-    // Return the number of rows in the section.
-    //return [self.list count];
-}*/
-
-/*- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    static NSString *CellIdentifier = @"Cell";
-    
-    UITableViewCell *cell = [tableView 
-                             dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] 
-                initWithStyle:UITableViewCellStyleDefault
-                reuseIdentifier:CellIdentifier];
-    }
-    // Configure the cell.
-    cell.textLabel.text = 
-    [self.list objectAtIndex: 
-     [indexPath row]];
-    return cell;
-}*/
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 	return [placesList count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+	static NSString *CellID = @"Cell";
+	UITableViewCell *cell = (UITableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellID];
+	
+	if (cell == nil) {
+		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellID];
+		
+		cell.textLabel.text = [placesList objectAtIndex:indexPath.row];
+	}
+	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+	return cell;
+}
+
+/*- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	
 	static NSString *CellIdentifier = @"Cell";
 	
@@ -133,7 +118,7 @@ tableView numberOfRowsInSection:(NSInteger)section
 	}
 	cell.textLabel.text = [placesList objectAtIndex:indexPath.row];
 	return cell;
-}
+}*/
 
 /*
 // Override to support conditional editing of the table view.
@@ -185,6 +170,36 @@ tableView numberOfRowsInSection:(NSInteger)section
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
+        
+    NSString *titleString = [placesList objectAtIndex:indexPath.row];
+    NSString *key = [titleToKey objectForKey:titleString];
+    NSLog(@"%@",key);
+        
+    id object = [keyToObject objectForKey:key];
+    if ([object isKindOfClass:[NSString class]]) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil 
+                                                        message:@"Hmm... We don't have data on this location."
+                                                            delegate:self 
+                                                                cancelButtonTitle:@"OK" 
+                                                                    otherButtonTitles:nil];
+        [alert show];
+        return;
+    }
+    
+    LocationViewController *location = [[LocationViewController alloc] init];
+    //location.data = ;
+    location.places = [[NSMutableArray alloc] initWithArray:object];
+    NSLog(@"%@",location.places);
+    [self.navigationController pushViewController:location animated:YES];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+        /*BuildingViewController *building = [[BuildingViewController alloc] init];
+         building.departments = [[NSMutableArray alloc] initWithArray:object];
+         [self.navigationController pushViewController:building animated:YES];
+         [self.navigationController setNavigationBarHidden:NO];
+         [building release];
+         self.searchBar.text = nil;
+         isSearching = YES;
+         [tableView deselectRowAtIndexPath:indexPath animated:YES];*/
 }
 
 
