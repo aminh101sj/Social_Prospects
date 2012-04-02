@@ -3,7 +3,7 @@
 //  SocialProspects
 //
 //  Created by Alben Cheung on 4/1/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 Hipsters. All rights reserved.
 //
 
 #import "MainViewController.h"
@@ -21,6 +21,8 @@
 @synthesize keyToTitle;
 @synthesize placesData;
 @synthesize placesList;
+@synthesize urlToKey;
+@synthesize keyToUrl;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -44,7 +46,8 @@
     keyToTitle = [[NSMutableDictionary alloc] init];
 	keyToObject = [[NSMutableDictionary alloc] init];
 	titleToKey = [[NSMutableDictionary alloc] init];
-    
+    keyToUrl = [[NSMutableDictionary alloc] init];
+    urlToKey = [[NSMutableDictionary alloc] init];
     
     int count = 0;
 	for (NSDictionary *place in placesData) {
@@ -58,7 +61,10 @@
         [keyToObject setObject:@"" forKey:aKey];
 	}
     
+    NSLog(@"%@",[titleToKey allKeys]);
     placesList = [[NSMutableArray alloc] initWithArray:[titleToKey allKeys]];
+    NSMutableArray *testUrl = [[NSMutableArray alloc] initWithArray:[urlToKey allKeys]];
+    NSLog(@"%@", testUrl);
     
     //NSLog(@"%@",placesList);
     

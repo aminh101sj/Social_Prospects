@@ -3,7 +3,7 @@
 //  SocialProspects
 //
 //  Created by Alben Cheung on 4/1/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 Hipsters. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

@@ -3,7 +3,7 @@
 //  SocialProspects
 //
 //  Created by Alben Cheung on 4/1/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 Hipsters. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -17,6 +17,8 @@
     NSMutableDictionary *keyToObject;
     NSMutableDictionary *keyToTitle;
     NSMutableDictionary *titleToKey;
+    NSMutableDictionary *urlToKey;
+    NSMutableDictionary *keyToUrl;
 }
 
 //@property (nonatomic, strong) NSArray *list;
@@ -25,5 +27,7 @@
 @property (nonatomic, retain) NSMutableDictionary *keyToObject;
 @property (nonatomic, retain) NSMutableDictionary *keyToTitle;
 @property (nonatomic, retain) NSMutableDictionary *titleToKey;
+@property (nonatomic, retain) NSMutableDictionary *urlToKey;
+@property (nonatomic, retain) NSMutableDictionary *keyToUrl;
 
 @end
