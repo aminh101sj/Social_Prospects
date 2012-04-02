@@ -1,0 +1,462 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FF7520ED15291C9A008291D2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF7520EC15291C9A008291D2 /* UIKit.framework */; };
+		FF7520EF15291C9A008291D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF7520EE15291C9A008291D2 /* Foundation.framework */; };
+		FF7520F115291C9A008291D2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF7520F015291C9A008291D2 /* CoreGraphics.framework */; };
+		FF7520F715291C9A008291D2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FF7520F515291C9A008291D2 /* InfoPlist.strings */; };
+		FF7520F915291C9A008291D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7520F815291C9A008291D2 /* main.m */; };
+		FF7520FD15291C9A008291D2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7520FC15291C9A008291D2 /* AppDelegate.m */; };
+		FF75210515291C9A008291D2 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF75210415291C9A008291D2 /* SenTestingKit.framework */; };
+		FF75210615291C9A008291D2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF7520EC15291C9A008291D2 /* UIKit.framework */; };
+		FF75210715291C9A008291D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF7520EE15291C9A008291D2 /* Foundation.framework */; };
+		FF75210F15291C9A008291D2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FF75210D15291C9A008291D2 /* InfoPlist.strings */; };
+		FF75211215291C9A008291D2 /* SocialProspectsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FF75211115291C9A008291D2 /* SocialProspectsTests.m */; };
+		FF7521241529213D008291D2 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7521221529213D008291D2 /* MainViewController.m */; };
+		FF7521251529213D008291D2 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF7521231529213D008291D2 /* MainViewController.xib */; };
+		FF75212815292A4E008291D2 /* places.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF75212715292A4E008291D2 /* places.plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FF75210815291C9A008291D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FF7520DF15291C9A008291D2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FF7520E715291C9A008291D2;
+			remoteInfo = SocialProspects;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FF7520E815291C9A008291D2 /* SocialProspects.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialProspects.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF7520EC15291C9A008291D2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		FF7520EE15291C9A008291D2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FF7520F015291C9A008291D2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		FF7520F415291C9A008291D2 /* SocialProspects-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SocialProspects-Info.plist"; sourceTree = "<group>"; };
+		FF7520F615291C9A008291D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FF7520F815291C9A008291D2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FF7520FA15291C9A008291D2 /* SocialProspects-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SocialProspects-Prefix.pch"; sourceTree = "<group>"; };
+		FF7520FB15291C9A008291D2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FF7520FC15291C9A008291D2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FF75210315291C9A008291D2 /* SocialProspectsTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SocialProspectsTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF75210415291C9A008291D2 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		FF75210C15291C9A008291D2 /* SocialProspectsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SocialProspectsTests-Info.plist"; sourceTree = "<group>"; };
+		FF75210E15291C9A008291D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FF75211015291C9A008291D2 /* SocialProspectsTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SocialProspectsTests.h; sourceTree = "<group>"; };
+		FF75211115291C9A008291D2 /* SocialProspectsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SocialProspectsTests.m; sourceTree = "<group>"; };
+		FF7521211529213D008291D2 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		FF7521221529213D008291D2 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		FF7521231529213D008291D2 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		FF75212715292A4E008291D2 /* places.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = places.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FF7520E515291C9A008291D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF7520ED15291C9A008291D2 /* UIKit.framework in Frameworks */,
+				FF7520EF15291C9A008291D2 /* Foundation.framework in Frameworks */,
+				FF7520F115291C9A008291D2 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF7520FF15291C9A008291D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF75210515291C9A008291D2 /* SenTestingKit.framework in Frameworks */,
+				FF75210615291C9A008291D2 /* UIKit.framework in Frameworks */,
+				FF75210715291C9A008291D2 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FF7520DD15291C9A008291D2 = {
+			isa = PBXGroup;
+			children = (
+				FF7520F215291C9A008291D2 /* SocialProspects */,
+				FF75210A15291C9A008291D2 /* SocialProspectsTests */,
+				FF7520EB15291C9A008291D2 /* Frameworks */,
+				FF7520E915291C9A008291D2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FF7520E915291C9A008291D2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FF7520E815291C9A008291D2 /* SocialProspects.app */,
+				FF75210315291C9A008291D2 /* SocialProspectsTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FF7520EB15291C9A008291D2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FF7520EC15291C9A008291D2 /* UIKit.framework */,
+				FF7520EE15291C9A008291D2 /* Foundation.framework */,
+				FF7520F015291C9A008291D2 /* CoreGraphics.framework */,
+				FF75210415291C9A008291D2 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FF7520F215291C9A008291D2 /* SocialProspects */ = {
+			isa = PBXGroup;
+			children = (
+				FF752126152929F6008291D2 /* plists */,
+				FF75211E15291D86008291D2 /* View Controllers */,
+				FF7520FB15291C9A008291D2 /* AppDelegate.h */,
+				FF7520FC15291C9A008291D2 /* AppDelegate.m */,
+				FF7520F315291C9A008291D2 /* Supporting Files */,
+			);
+			path = SocialProspects;
+			sourceTree = "<group>";
+		};
+		FF7520F315291C9A008291D2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FF7520F415291C9A008291D2 /* SocialProspects-Info.plist */,
+				FF7520F515291C9A008291D2 /* InfoPlist.strings */,
+				FF7520F815291C9A008291D2 /* main.m */,
+				FF7520FA15291C9A008291D2 /* SocialProspects-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FF75210A15291C9A008291D2 /* SocialProspectsTests */ = {
+			isa = PBXGroup;
+			children = (
+				FF75211015291C9A008291D2 /* SocialProspectsTests.h */,
+				FF75211115291C9A008291D2 /* SocialProspectsTests.m */,
+				FF75210B15291C9A008291D2 /* Supporting Files */,
+			);
+			path = SocialProspectsTests;
+			sourceTree = "<group>";
+		};
+		FF75210B15291C9A008291D2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FF75210C15291C9A008291D2 /* SocialProspectsTests-Info.plist */,
+				FF75210D15291C9A008291D2 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FF75211E15291D86008291D2 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FF7521211529213D008291D2 /* MainViewController.h */,
+				FF7521221529213D008291D2 /* MainViewController.m */,
+				FF7521231529213D008291D2 /* MainViewController.xib */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		FF752126152929F6008291D2 /* plists */ = {
+			isa = PBXGroup;
+			children = (
+				FF75212715292A4E008291D2 /* places.plist */,
+			);
+			name = plists;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FF7520E715291C9A008291D2 /* SocialProspects */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF75211515291C9A008291D2 /* Build configuration list for PBXNativeTarget "SocialProspects" */;
+			buildPhases = (
+				FF7520E415291C9A008291D2 /* Sources */,
+				FF7520E515291C9A008291D2 /* Frameworks */,
+				FF7520E615291C9A008291D2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SocialProspects;
+			productName = SocialProspects;
+			productReference = FF7520E815291C9A008291D2 /* SocialProspects.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FF75210215291C9A008291D2 /* SocialProspectsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF75211815291C9A008291D2 /* Build configuration list for PBXNativeTarget "SocialProspectsTests" */;
+			buildPhases = (
+				FF7520FE15291C9A008291D2 /* Sources */,
+				FF7520FF15291C9A008291D2 /* Frameworks */,
+				FF75210015291C9A008291D2 /* Resources */,
+				FF75210115291C9A008291D2 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FF75210915291C9A008291D2 /* PBXTargetDependency */,
+			);
+			name = SocialProspectsTests;
+			productName = SocialProspectsTests;
+			productReference = FF75210315291C9A008291D2 /* SocialProspectsTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FF7520DF15291C9A008291D2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = FF7520E215291C9A008291D2 /* Build configuration list for PBXProject "SocialProspects" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = FF7520DD15291C9A008291D2;
+			productRefGroup = FF7520E915291C9A008291D2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FF7520E715291C9A008291D2 /* SocialProspects */,
+				FF75210215291C9A008291D2 /* SocialProspectsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FF7520E615291C9A008291D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF7520F715291C9A008291D2 /* InfoPlist.strings in Resources */,
+				FF7521251529213D008291D2 /* MainViewController.xib in Resources */,
+				FF75212815292A4E008291D2 /* places.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF75210015291C9A008291D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF75210F15291C9A008291D2 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		FF75210115291C9A008291D2 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FF7520E415291C9A008291D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF7520F915291C9A008291D2 /* main.m in Sources */,
+				FF7520FD15291C9A008291D2 /* AppDelegate.m in Sources */,
+				FF7521241529213D008291D2 /* MainViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF7520FE15291C9A008291D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF75211215291C9A008291D2 /* SocialProspectsTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FF75210915291C9A008291D2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FF7520E715291C9A008291D2 /* SocialProspects */;
+			targetProxy = FF75210815291C9A008291D2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FF7520F515291C9A008291D2 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FF7520F615291C9A008291D2 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		FF75210D15291C9A008291D2 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FF75210E15291C9A008291D2 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FF75211315291C9A008291D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FF75211415291C9A008291D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FF75211615291C9A008291D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SocialProspects/SocialProspects-Prefix.pch";
+				INFOPLIST_FILE = "SocialProspects/SocialProspects-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		FF75211715291C9A008291D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SocialProspects/SocialProspects-Prefix.pch";
+				INFOPLIST_FILE = "SocialProspects/SocialProspects-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		FF75211915291C9A008291D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SocialProspects.app/SocialProspects";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SocialProspects/SocialProspects-Prefix.pch";
+				INFOPLIST_FILE = "SocialProspectsTests/SocialProspectsTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		FF75211A15291C9A008291D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SocialProspects.app/SocialProspects";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SocialProspects/SocialProspects-Prefix.pch";
+				INFOPLIST_FILE = "SocialProspectsTests/SocialProspectsTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FF7520E215291C9A008291D2 /* Build configuration list for PBXProject "SocialProspects" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF75211315291C9A008291D2 /* Debug */,
+				FF75211415291C9A008291D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF75211515291C9A008291D2 /* Build configuration list for PBXNativeTarget "SocialProspects" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF75211615291C9A008291D2 /* Debug */,
+				FF75211715291C9A008291D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FF75211815291C9A008291D2 /* Build configuration list for PBXNativeTarget "SocialProspectsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF75211915291C9A008291D2 /* Debug */,
+				FF75211A15291C9A008291D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FF7520DF15291C9A008291D2 /* Project object */;
+}
