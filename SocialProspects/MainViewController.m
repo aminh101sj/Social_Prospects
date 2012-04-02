@@ -15,8 +15,11 @@
 @implementation MainViewController
 
 //@synthesize list;
-@synthesize places;
 @synthesize keyToObject;
+@synthesize titleToKey;
+@synthesize keyToTitle;
+@synthesize placesData;
+@synthesize placesList;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -36,22 +39,29 @@
     self.title = @"Social Prospects";
     
     
-    /*NSString *path = [[NSBundle mainBundle] pathForResource:@"places" ofType:@"plist"];
-	NSArray *places = [[NSArray alloc] initWithContentsOfFile:path];
-    int count = 0;
-	for (NSArray *place in places) {
-		count++;
-		NSString *key = [NSString stringWithString:[place objectForKey:@"key"]];
-        [keyToObject setObject:@"" forKey:key];
-	}*/
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"HotList" ofType:@"plist"];
+	placesData = [[NSMutableDictionary alloc] initWithContentsOfFile:path];
+    NSLog(@"%@",path);
+    NSLog(@"%@",placesData);
+    keyToTitle = [[NSMutableDictionary alloc] init];
+	keyToObject = [[NSMutableDictionary alloc] init];
+	titleToKey = [[NSMutableDictionary alloc] init];
     
-    // Read mapdata from file
-	NSString *path = [[NSBundle mainBundle] pathForResource:@"places" ofType:@"plist"];
-	NSArray *places = [[NSArray alloc] initWithContentsOfFile:path];
+    
     int count = 0;
-	for (NSArray *place in places) 
+	for (NSDictionary *place in placesData) {
+		count++;
+        NSString *name = [NSString stringWithString:[place objectForKey:@"name"]];
+		NSString *key = [NSString stringWithString:[place objectForKey:@"key"]];
+        NSLog(@"%@",name);
+        NSLog(@"%@",key);
+        [titleToKey setObject:key forKey:name];
+		[keyToTitle setObject:name forKey:key];
+        [keyToObject setObject:@"" forKey:key];
+	}
+    
+	for (NSArray *place in placesData) 
 	{
-        count++;
 		NSString *key = [place objectAtIndex:0];
 		if ([keyToObject objectForKey:key] == nil) continue;
 		if ([place count] <= 1) continue;
@@ -59,9 +69,14 @@
 		NSMutableArray *newPlace = [[NSMutableArray alloc] initWithArray:place];
 		[newPlace removeObjectAtIndex:0];
 		[keyToObject setObject:newPlace forKey:key];
+        
 	}
-
-    placesData = [[NSMutableArray alloc] initWithArray:[keyToObject allKeys]];
+    
+    placesList = [[NSMutableArray alloc] initWithArray:[titleToKey allKeys]];
+    
+    NSLog(@"%@",placesList);
+    //placesList = [[NSMutableArray alloc] initWithArray:[titleToKey allKeys]];
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -116,26 +131,8 @@ tableView numberOfRowsInSection:(NSInteger)section
     return cell;
 }*/
 
-/*- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	static NSString *CellIdentifier = @"Cell";
-    
-    UITableViewCell *cell = [tableView 
-                             dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-		cell = [[UITableViewCell alloc] 
-                 initWithStyle:UITableViewCellStyleDefault 
-                 reuseIdentifier:CellIdentifier];
-		
-		NSDictionary *place = [places objectAtIndex:indexPath.row];
-		
-		cell.textLabel.text = [NSString stringWithString:[place objectForKey:@"name"]];
-	}
-	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-	return cell;
-}*/
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	return [placesData count];
+	return [placesList count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -146,10 +143,9 @@ tableView numberOfRowsInSection:(NSInteger)section
 	if (cell == nil) {
 		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
 	}
-	cell.textLabel.text = [placesData objectAtIndex:indexPath.row];
+	cell.textLabel.text = [placesList objectAtIndex:indexPath.row];
 	return cell;
 }
-
 
 /*
 // Override to support conditional editing of the table view.

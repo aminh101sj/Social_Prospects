@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FF7520ED15291C9A008291D2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF7520EC15291C9A008291D2 /* UIKit.framework */; };
-		FF7520EF15291C9A008291D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF7520EE15291C9A008291D2 /* Foundation.framework */; };
-		FF7520F115291C9A008291D2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF7520F015291C9A008291D2 /* CoreGraphics.framework */; };
+		FF57B93D1529A59600991073 /* HotList.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF57B93C1529A59600991073 /* HotList.plist */; };
 		FF7520F715291C9A008291D2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FF7520F515291C9A008291D2 /* InfoPlist.strings */; };
 		FF7520F915291C9A008291D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7520F815291C9A008291D2 /* main.m */; };
 		FF7520FD15291C9A008291D2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7520FC15291C9A008291D2 /* AppDelegate.m */; };
@@ -20,7 +18,10 @@
 		FF75211215291C9A008291D2 /* SocialProspectsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FF75211115291C9A008291D2 /* SocialProspectsTests.m */; };
 		FF7521241529213D008291D2 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7521221529213D008291D2 /* MainViewController.m */; };
 		FF7521251529213D008291D2 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF7521231529213D008291D2 /* MainViewController.xib */; };
-		FF75212815292A4E008291D2 /* places.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF75212715292A4E008291D2 /* places.plist */; };
+		FFA3DB90152985B800989D64 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF7520EC15291C9A008291D2 /* UIKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		FFA3DB91152985BF00989D64 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF7520EE15291C9A008291D2 /* Foundation.framework */; };
+		FFA3DB92152985D200989D64 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF7520F015291C9A008291D2 /* CoreGraphics.framework */; };
+		FFA3DB941529865800989D64 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFA3DB931529865800989D64 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FF57B93C1529A59600991073 /* HotList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HotList.plist; sourceTree = "<group>"; };
 		FF7520E815291C9A008291D2 /* SocialProspects.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialProspects.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF7520EC15291C9A008291D2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FF7520EE15291C9A008291D2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -53,7 +55,7 @@
 		FF7521211529213D008291D2 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		FF7521221529213D008291D2 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		FF7521231529213D008291D2 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
-		FF75212715292A4E008291D2 /* places.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = places.plist; sourceTree = "<group>"; };
+		FFA3DB931529865800989D64 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,9 +63,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF7520ED15291C9A008291D2 /* UIKit.framework in Frameworks */,
-				FF7520EF15291C9A008291D2 /* Foundation.framework in Frameworks */,
-				FF7520F115291C9A008291D2 /* CoreGraphics.framework in Frameworks */,
+				FFA3DB941529865800989D64 /* QuartzCore.framework in Frameworks */,
+				FFA3DB92152985D200989D64 /* CoreGraphics.framework in Frameworks */,
+				FFA3DB91152985BF00989D64 /* Foundation.framework in Frameworks */,
+				FFA3DB90152985B800989D64 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +86,7 @@
 		FF7520DD15291C9A008291D2 = {
 			isa = PBXGroup;
 			children = (
+				FFA3DB931529865800989D64 /* QuartzCore.framework */,
 				FF7520F215291C9A008291D2 /* SocialProspects */,
 				FF75210A15291C9A008291D2 /* SocialProspectsTests */,
 				FF7520EB15291C9A008291D2 /* Frameworks */,
@@ -113,7 +117,7 @@
 		FF7520F215291C9A008291D2 /* SocialProspects */ = {
 			isa = PBXGroup;
 			children = (
-				FF752126152929F6008291D2 /* plists */,
+				FF57B93C1529A59600991073 /* HotList.plist */,
 				FF75211E15291D86008291D2 /* View Controllers */,
 				FF7520FB15291C9A008291D2 /* AppDelegate.h */,
 				FF7520FC15291C9A008291D2 /* AppDelegate.m */,
@@ -160,14 +164,6 @@
 				FF7521231529213D008291D2 /* MainViewController.xib */,
 			);
 			name = "View Controllers";
-			sourceTree = "<group>";
-		};
-		FF752126152929F6008291D2 /* plists */ = {
-			isa = PBXGroup;
-			children = (
-				FF75212715292A4E008291D2 /* places.plist */,
-			);
-			name = plists;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,7 +238,7 @@
 			files = (
 				FF7520F715291C9A008291D2 /* InfoPlist.strings in Resources */,
 				FF7521251529213D008291D2 /* MainViewController.xib in Resources */,
-				FF75212815292A4E008291D2 /* places.plist in Resources */,
+				FF57B93D1529A59600991073 /* HotList.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,7 +370,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SocialProspects/SocialProspects-Prefix.pch";
 				INFOPLIST_FILE = "SocialProspects/SocialProspects-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -387,7 +383,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SocialProspects/SocialProspects-Prefix.pch";
 				INFOPLIST_FILE = "SocialProspects/SocialProspects-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -447,6 +443,7 @@
 				FF75211715291C9A008291D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FF75211815291C9A008291D2 /* Build configuration list for PBXNativeTarget "SocialProspectsTests" */ = {
 			isa = XCConfigurationList;
@@ -455,6 +452,7 @@
 				FF75211A15291C9A008291D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -2,9 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Places</key>
-	<dict>
-		<key>Lee&apos;s Sandwiches</key>
+	<key>Item 0</key>
+	<array>
 		<dict>
 			<key>key</key>
 			<string>1</string>
@@ -19,7 +18,6 @@
 			<key>url</key>
 			<string>http://leesandwiches.com</string>
 		</dict>
-		<key>Hydration</key>
 		<dict>
 			<key>key</key>
 			<string>2</string>
@@ -34,7 +32,6 @@
 			<key>url</key>
 			<string>http://www.hydration-cafe.com/shop/</string>
 		</dict>
-		<key>Pizza My Heart</key>
 		<dict>
 			<key>key</key>
 			<string>3</string>
@@ -49,7 +46,6 @@
 			<key>url</key>
 			<string>http://www.pizzamyheart.com</string>
 		</dict>
-		<key>Philz Coffee</key>
 		<dict>
 			<key>key</key>
 			<string>4</string>
@@ -64,7 +60,6 @@
 			<key>url</key>
 			<string>http://www.philzcoffee.com</string>
 		</dict>
-		<key>Peanuts Cafe</key>
 		<dict>
 			<key>key</key>
 			<string>5</string>
@@ -79,6 +74,6 @@
 			<key>url</key>
 			<string>http://www.peanutsdeluxe.com/</string>
 		</dict>
-	</dict>
+	</array>
 </dict>
 </plist>

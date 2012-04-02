@@ -11,16 +11,19 @@
 @interface MainViewController : UITableViewController {
     //NSArray *list;
     
-    //Places
-    NSMutableArray *places;
-    
     //Data Arrays & Dictionaries 
-    NSArray *placesData;
+    NSMutableDictionary *placesData;
+    NSMutableArray *placesList;
     NSMutableDictionary *keyToObject;
+    NSMutableDictionary *keyToTitle;
+    NSMutableDictionary *titleToKey;
 }
 
 //@property (nonatomic, strong) NSArray *list;
-@property (nonatomic, retain) NSMutableArray *places;
+@property (nonatomic, retain) NSMutableDictionary *placesData;
+@property (nonatomic, retain) NSMutableArray *placesList;
 @property (nonatomic, retain) NSMutableDictionary *keyToObject;
+@property (nonatomic, retain) NSMutableDictionary *keyToTitle;
+@property (nonatomic, retain) NSMutableDictionary *titleToKey;
 
 @end
