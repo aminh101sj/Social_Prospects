@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "SocialProspects/MainViewController.m"
-         timestampString = "355051807.795556"
+         timestampString = "355056092.254513"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "75"
-         endingLineNumber = "75"
+         startingLineNumber = "63"
+         endingLineNumber = "63"
          landmarkName = "-viewDidLoad"
          landmarkType = "5">
       </FileBreakpoint>
@@ -21,11 +21,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "SocialProspects/MainViewController.m"
-         timestampString = "355051807.795556"
+         timestampString = "355056092.254513"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "77"
-         endingLineNumber = "77"
+         startingLineNumber = "65"
+         endingLineNumber = "65"
          landmarkName = "-viewDidLoad"
          landmarkType = "5">
       </FileBreakpoint>

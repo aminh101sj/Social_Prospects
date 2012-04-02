@@ -12,7 +12,8 @@
     //NSArray *list;
     
     //Data Arrays & Dictionaries 
-    NSMutableDictionary *placesData;
+    //NSMutableDictionary *placesData;
+    NSMutableArray *placesData;
     NSMutableArray *placesList;
     NSMutableDictionary *keyToObject;
     NSMutableDictionary *keyToTitle;
@@ -20,8 +21,9 @@
 }
 
 //@property (nonatomic, strong) NSArray *list;
-@property (nonatomic, retain) NSMutableDictionary *placesData;
+//@property (nonatomic, retain) NSMutableDictionary *placesData;
 @property (nonatomic, retain) NSMutableArray *placesList;
+@property (nonatomic, retain) NSMutableArray *placesData;
 @property (nonatomic, retain) NSMutableDictionary *keyToObject;
 @property (nonatomic, retain) NSMutableDictionary *keyToTitle;
 @property (nonatomic, retain) NSMutableDictionary *titleToKey;

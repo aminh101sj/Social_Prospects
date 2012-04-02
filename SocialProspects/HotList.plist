@@ -1,79 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict>
-	<key>Item 0</key>
-	<array>
-		<dict>
-			<key>key</key>
-			<string>1</string>
-			<key>name</key>
-			<string>Lee&apos;s Sandwiches</string>
-			<key>hotness</key>
-			<integer>0</integer>
-			<key>address</key>
-			<string>260 East Santa Clara Street, San Jose, CA 95113</string>
-			<key>phone</key>
-			<string>(408) 286-8808</string>
-			<key>url</key>
-			<string>http://leesandwiches.com</string>
-		</dict>
-		<dict>
-			<key>key</key>
-			<string>2</string>
-			<key>name</key>
-			<string>Hydration</string>
-			<key>hotness</key>
-			<integer>0</integer>
-			<key>address</key>
-			<string>310 S 3rd St, San Jose, CA 95112</string>
-			<key>phone</key>
-			<string>(408) 298-9968</string>
-			<key>url</key>
-			<string>http://www.hydration-cafe.com/shop/</string>
-		</dict>
-		<dict>
-			<key>key</key>
-			<string>3</string>
-			<key>name</key>
-			<string>Pizza My Heart</string>
-			<key>hotness</key>
-			<integer>0</integer>
-			<key>address</key>
-			<string>117 E San Carlos St, San Jose, CA 95112</string>
-			<key>phone</key>
-			<string>(408) 280-0707</string>
-			<key>url</key>
-			<string>http://www.pizzamyheart.com</string>
-		</dict>
-		<dict>
-			<key>key</key>
-			<string>4</string>
-			<key>name</key>
-			<string>Philz Coffee</string>
-			<key>hotness</key>
-			<integer>0</integer>
-			<key>address</key>
-			<string>118 Paseo de San Antonio, San Jose, CA 95112</string>
-			<key>phone</key>
-			<string>(408) 971-4212</string>
-			<key>url</key>
-			<string>http://www.philzcoffee.com</string>
-		</dict>
-		<dict>
-			<key>key</key>
-			<string>5</string>
-			<key>name</key>
-			<string>Peanuts Cafe</string>
-			<key>hotness</key>
-			<integer>0</integer>
-			<key>address</key>
-			<string>275 E San Fernando St, San Jose, CA 95112</string>
-			<key>phone</key>
-			<string>(408) 998-9778</string>
-			<key>url</key>
-			<string>http://www.peanutsdeluxe.com/</string>
-		</dict>
-	</array>
-</dict>
+<array>
+	<dict>
+		<key>key</key>
+		<string>1</string>
+		<key>name</key>
+		<string>Lee&apos;s Sandwiches</string>
+		<key>hotness</key>
+		<integer>0</integer>
+		<key>address</key>
+		<string>260 East Santa Clara Street, San Jose, CA 95113</string>
+		<key>phone</key>
+		<string>(408) 286-8808</string>
+		<key>url</key>
+		<string>http://leesandwiches.com</string>
+	</dict>
+	<dict>
+		<key>key</key>
+		<string>2</string>
+		<key>name</key>
+		<string>Hydration</string>
+		<key>hotness</key>
+		<integer>0</integer>
+		<key>address</key>
+		<string>310 S 3rd St, San Jose, CA 95112</string>
+		<key>phone</key>
+		<string>(408) 298-9968</string>
+		<key>url</key>
+		<string>http://www.hydration-cafe.com/shop/</string>
+	</dict>
+	<dict>
+		<key>key</key>
+		<string>3</string>
+		<key>name</key>
+		<string>Pizza My Heart</string>
+		<key>hotness</key>
+		<integer>0</integer>
+		<key>address</key>
+		<string>117 E San Carlos St, San Jose, CA 95112</string>
+		<key>phone</key>
+		<string>(408) 280-0707</string>
+		<key>url</key>
+		<string>http://www.pizzamyheart.com</string>
+	</dict>
+	<dict>
+		<key>key</key>
+		<string>4</string>
+		<key>name</key>
+		<string>Philz Coffee</string>
+		<key>hotness</key>
+		<integer>0</integer>
+		<key>address</key>
+		<string>118 Paseo de San Antonio, San Jose, CA 95112</string>
+		<key>phone</key>
+		<string>(408) 971-4212</string>
+		<key>url</key>
+		<string>http://www.philzcoffee.com</string>
+	</dict>
+	<dict>
+		<key>key</key>
+		<string>5</string>
+		<key>name</key>
+		<string>Peanuts Cafe</string>
+		<key>hotness</key>
+		<integer>0</integer>
+		<key>address</key>
+		<string>275 E San Fernando St, San Jose, CA 95112</string>
+		<key>phone</key>
+		<string>(408) 998-9778</string>
+		<key>url</key>
+		<string>http://www.peanutsdeluxe.com/</string>
+	</dict>
+</array>
 </plist>

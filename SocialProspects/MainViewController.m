@@ -39,9 +39,9 @@
     self.title = @"Social Prospects";
     
     
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"HotList" ofType:@"plist"];
-	placesData = [[NSMutableDictionary alloc] initWithContentsOfFile:path];
-    NSLog(@"%@",path);
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"HotList" ofType:@"plist"];
+	placesData = [[NSMutableArray alloc] initWithContentsOfFile:filePath];
+    NSLog(@"%@",filePath);
     NSLog(@"%@",placesData);
     keyToTitle = [[NSMutableDictionary alloc] init];
 	keyToObject = [[NSMutableDictionary alloc] init];
@@ -51,25 +51,13 @@
     int count = 0;
 	for (NSDictionary *place in placesData) {
 		count++;
-        NSString *name = [NSString stringWithString:[place objectForKey:@"name"]];
-		NSString *key = [NSString stringWithString:[place objectForKey:@"key"]];
-        NSLog(@"%@",name);
-        NSLog(@"%@",key);
-        [titleToKey setObject:key forKey:name];
-		[keyToTitle setObject:name forKey:key];
-        [keyToObject setObject:@"" forKey:key];
-	}
-    
-	for (NSArray *place in placesData) 
-	{
-		NSString *key = [place objectAtIndex:0];
-		if ([keyToObject objectForKey:key] == nil) continue;
-		if ([place count] <= 1) continue;
-		
-		NSMutableArray *newPlace = [[NSMutableArray alloc] initWithArray:place];
-		[newPlace removeObjectAtIndex:0];
-		[keyToObject setObject:newPlace forKey:key];
-        
+        NSString *aName =[NSString stringWithString:[place objectForKey:@"name"]];
+		NSString *aKey = [NSString stringWithString:[place objectForKey:@"key"]];
+        NSLog(@"%@",aName);
+        NSLog(@"%@",aKey);
+        [titleToKey setObject:aKey forKey:aName];
+		[keyToTitle setObject:aName forKey:aKey];
+        [keyToObject setObject:@"" forKey:aKey];
 	}
     
     placesList = [[NSMutableArray alloc] initWithArray:[titleToKey allKeys]];
