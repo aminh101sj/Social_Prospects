@@ -78,6 +78,7 @@ tableView numberOfRowsInSection:(NSInteger)section
     NSIndexPath *index = [self.tableView indexPathForSelectedRow];
     EventViewController *evc = (EventViewController *)[segue destinationViewController];
     evc.titleText = [eventList objectAtIndex:(index.row)];
+    [self.tableView deselectRowAtIndexPath:index animated:YES]; 
 
     //NSLog(@"DIFFERENT %d", self.index);
     if(evc.titleText == @"Philz") {

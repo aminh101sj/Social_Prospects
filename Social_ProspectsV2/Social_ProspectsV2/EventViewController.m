@@ -86,6 +86,7 @@
     NSIndexPath *index = [self.tableView indexPathForSelectedRow];
     LocationViewController *evc = (LocationViewController *)[segue destinationViewController];
     evc.data = [eventList objectAtIndex:(index.row)];
+    [self.tableView deselectRowAtIndexPath:index animated:YES]; 
     
 }
 
