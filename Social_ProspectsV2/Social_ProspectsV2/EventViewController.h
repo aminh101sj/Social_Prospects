@@ -11,6 +11,7 @@
 @interface EventViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>{
     IBOutlet UILabel *bio;
     IBOutlet UIImageView *image;
+    IBOutlet UITableView *tableView;
     
     NSString *bioText;
     NSString *imageURL;
@@ -19,6 +20,7 @@
 }
 @property (nonatomic, retain) IBOutlet UILabel *bio;
 @property (nonatomic, retain) IBOutlet UIImageView *image;
+@property (nonatomic, retain) IBOutlet UITableView *tableView;
 @property (nonatomic, retain) NSString *bioText;
 @property (nonatomic, retain) NSString *imageURL;
 @property (nonatomic, retain) NSString *titleText;

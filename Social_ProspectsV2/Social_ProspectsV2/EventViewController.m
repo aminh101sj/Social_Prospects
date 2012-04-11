@@ -20,6 +20,7 @@
 @synthesize bioText;
 @synthesize imageURL;
 @synthesize eventList;
+@synthesize tableView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -79,6 +80,13 @@
     cell.textLabel.text = [self.eventList objectAtIndex: [indexPath row]];
     //cell.textLabel.text = @"Amazing";
     return cell;
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    NSIndexPath *index = [self.tableView indexPathForSelectedRow];
+    LocationViewController *evc = (LocationViewController *)[segue destinationViewController];
+    evc.data = [eventList objectAtIndex:(index.row)];
+    
 }
 
 @end
