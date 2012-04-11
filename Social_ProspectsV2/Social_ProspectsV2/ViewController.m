@@ -62,7 +62,7 @@ tableView numberOfRowsInSection:(NSInteger)section
     
     static NSString *CellIdentifier = @"Cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] 
                 initWithStyle:UITableViewCellStyleDefault
