@@ -1,0 +1,25 @@
+/*
+#import "JSON.h"
+ Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+ */
+SBJsonParser *parser = [[[SBJsonParser alloc] init] autorelease];
+
+// Prepare URL request to download statuses from Twitter
+NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://fantasticu.lt/json.php"]];
+
+// Perform request and get JSON back as a NSData object
+NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+
+// Get JSON as a NSString from NSData response
+NSString *json_string = [[[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding] autorelease];
+// parse the JSON response into an object
+// Here we're using NSArray since we're parsing an array of JSON status objects
+   
+   
+NSArray *statuses = [parser objectWithString:json_string error:nil];
+
+// Each element in statuses is a single status
+// represented as a NSDictionary
+NSLog(@"%@", [statuses objectForKey:@"task"]);
+NSMutableString *pulledTask = [NSMutableString stringWithString:[statuses objectForKey:@"task"]];
+_Task.text = pulledTask;
