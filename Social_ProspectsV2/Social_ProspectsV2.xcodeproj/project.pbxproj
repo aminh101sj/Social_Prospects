@@ -119,17 +119,10 @@
 		06B548A715351F8700830D97 /* Social_ProspectsV2 */ = {
 			isa = PBXGroup;
 			children = (
-				06B548B015351F8700830D97 /* AppDelegate.h */,
-				06B548B115351F8700830D97 /* AppDelegate.m */,
-				06B548B315351F8700830D97 /* MainStoryboard_iPhone.storyboard */,
-				06B548B615351F8700830D97 /* MainStoryboard_iPad.storyboard */,
-				06B548B915351F8700830D97 /* ViewController.h */,
-				06B548BA15351F8700830D97 /* ViewController.m */,
+				FF6E665715356277009C74B7 /* Storyboards */,
+				FF6E66561535626E009C74B7 /* Delegate */,
+				FF6E665415356262009C74B7 /* Views */,
 				06B548A815351F8700830D97 /* Supporting Files */,
-				06B548E31535241200830D97 /* EventViewController.h */,
-				06B548E41535241300830D97 /* EventViewController.m */,
-				06B548E615352A0900830D97 /* LocationViewController.h */,
-				06B548E715352A0900830D97 /* LocationViewController.m */,
 			);
 			path = Social_ProspectsV2;
 			sourceTree = "<group>";
@@ -162,6 +155,37 @@
 				06B548CB15351F8800830D97 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FF6E665415356262009C74B7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				06B548B915351F8700830D97 /* ViewController.h */,
+				06B548BA15351F8700830D97 /* ViewController.m */,
+				06B548E31535241200830D97 /* EventViewController.h */,
+				06B548E41535241300830D97 /* EventViewController.m */,
+				06B548E615352A0900830D97 /* LocationViewController.h */,
+				06B548E715352A0900830D97 /* LocationViewController.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		FF6E66561535626E009C74B7 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				06B548B015351F8700830D97 /* AppDelegate.h */,
+				06B548B115351F8700830D97 /* AppDelegate.m */,
+			);
+			name = Delegate;
+			sourceTree = "<group>";
+		};
+		FF6E665715356277009C74B7 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				06B548B315351F8700830D97 /* MainStoryboard_iPhone.storyboard */,
+				06B548B615351F8700830D97 /* MainStoryboard_iPad.storyboard */,
+			);
+			name = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
