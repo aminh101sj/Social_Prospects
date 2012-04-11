@@ -22,7 +22,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    self.eventList = [[NSArray alloc] initWithObjects: @"Philz", @"Smoke Eaters", @"Peanuts", nil];
+    self.eventList = [[NSArray alloc] initWithObjects: @"Philz Coffee", @"Smoke Eaters", @"Peanuts Deluxe Cafe", nil];
     self.title = @"Events";
     
 }
@@ -62,7 +62,7 @@ tableView numberOfRowsInSection:(NSInteger)section
     
     static NSString *CellIdentifier = @"Cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] 
                 initWithStyle:UITableViewCellStyleDefault
@@ -80,12 +80,12 @@ tableView numberOfRowsInSection:(NSInteger)section
     evc.titleText = [eventList objectAtIndex:(index.row)];
 
     //NSLog(@"DIFFERENT %d", self.index);
-    if(evc.titleText == @"Philz") {
+    if(evc.titleText == @"Philz Coffee") {
         evc.imageURL = @"http://s3-media3.ak.yelpcdn.com/bphoto/HX0S_4Rb0VuhluHrEXGbUw/ms.jpg";
         evc.bioText = @"Philz is where to go for real coffee.  I'm a latte kinda girl that finds amusement in seeing what kind of design the barista can do with froth.";
         evc.eventList = [[NSArray alloc] initWithObjects: @"Hip Music", @"Hip Dances", @"Hip Central", nil];
     }
-    else if(evc.titleText == @"Peanuts") {
+    else if(evc.titleText == @"Peanuts Deluxe Cafe") {
         evc.imageURL = @"http://s3-media1.ak.yelpcdn.com/bphoto/2797QkRrZ4kUvKAeE_dJwQ/ms.jpg";
         evc.bioText = @"Overall, Peanuts is a SJSU mainstay for great reason.";
         evc.eventList = [[NSArray alloc] initWithObjects: @"Drunken Kung Fu", @"Drunken Master", @"Drunk Period", nil];
