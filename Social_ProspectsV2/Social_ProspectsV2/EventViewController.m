@@ -19,6 +19,7 @@
 @synthesize image;
 @synthesize bioText;
 @synthesize imageURL;
+@synthesize eventList;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -46,6 +47,7 @@
     self.bioText = nil;
     self.titleText = nil;
     self.imageURL = nil;
+    self.eventList = nil;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -60,7 +62,7 @@
 }
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section  {
-    return 4;
+    return [self.eventList count];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -74,7 +76,7 @@
                 reuseIdentifier:CellIdentifier];
     }
     // Configure the cell.
-    cell.textLabel.text = @"Events";
+    cell.textLabel.text = [self.eventList objectAtIndex: [indexPath row]];
     //cell.textLabel.text = @"Amazing";
     return cell;
 }

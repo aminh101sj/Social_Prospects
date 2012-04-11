@@ -15,10 +15,12 @@
     NSString *bioText;
     NSString *imageURL;
     NSString *titleText;
+    NSArray *eventList;
 }
 @property (nonatomic, retain) IBOutlet UILabel *bio;
 @property (nonatomic, retain) IBOutlet UIImageView *image;
 @property (nonatomic, retain) NSString *bioText;
 @property (nonatomic, retain) NSString *imageURL;
 @property (nonatomic, retain) NSString *titleText;
+@property (nonatomic, retain) NSArray *eventList;
 @end
