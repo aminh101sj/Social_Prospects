@@ -10,8 +10,12 @@
 
 @interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
     NSArray *eventList;
+    IBOutlet UITableView *tableView;
+//    NSInteger index;
 }
 
+@property (nonatomic, retain) IBOutlet UITableView *tableView;
 @property (nonatomic, retain) NSArray *eventList;
+//@property (nonatomic) NSInteger index;
 
 @end

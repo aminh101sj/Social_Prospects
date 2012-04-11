@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LocationViewController : UIViewController
+@interface LocationViewController : UIViewController {
+    IBOutlet UILabel *label;
+    NSString *data;
+}
 
+@property (nonatomic, retain) IBOutlet UILabel *label;
+@property (nonatomic, retain) NSString *data;
 @end

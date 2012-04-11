@@ -6,6 +6,7 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
+#import "EventViewController.h"
 #import "ViewController.h"
 
 @interface ViewController ()
@@ -14,6 +15,8 @@
 
 @implementation ViewController
 @synthesize eventList;
+@synthesize tableView;
+//@synthesize index;
 
 - (void)viewDidLoad
 {
@@ -59,8 +62,7 @@ tableView numberOfRowsInSection:(NSInteger)section
     
     static NSString *CellIdentifier = @"Cell";
     
-    UITableViewCell *cell = [tableView 
-                             dequeueReusableCellWithIdentifier:CellIdentifier];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] 
                 initWithStyle:UITableViewCellStyleDefault
@@ -70,6 +72,27 @@ tableView numberOfRowsInSection:(NSInteger)section
     cell.textLabel.text = [self.eventList objectAtIndex: [indexPath row]];
     //cell.textLabel.text = @"Amazing";
     return cell;
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    NSIndexPath *index = [self.tableView indexPathForSelectedRow];
+    EventViewController *evc = (EventViewController *)[segue destinationViewController];
+    evc.titleText = [eventList objectAtIndex:(index.row)];
+
+    //NSLog(@"DIFFERENT %d", self.index);
+    if(evc.titleText == @"Philz") {
+        evc.imageURL = @"http://s3-media3.ak.yelpcdn.com/bphoto/HX0S_4Rb0VuhluHrEXGbUw/ms.jpg";
+        evc.bioText = @"Philz is where to go for real coffee.  I'm a latte kinda girl that finds amusement in seeing what kind of design the barista can do with froth.";
+    }
+    else if(evc.titleText == @"Peanuts") {
+        evc.imageURL = @"http://s3-media1.ak.yelpcdn.com/bphoto/2797QkRrZ4kUvKAeE_dJwQ/ms.jpg";
+        evc.bioText = @"Overall, Peanuts is a SJSU mainstay for great reason.";
+    }
+    else if(evc.titleText == @"Smoke Eaters") {
+        evc.imageURL = @"http://s3-media1.ak.yelpcdn.com/bphoto/1-lHpG20Olbh_oIicvkQPw/ms.jpg";
+        evc.bioText = @"Love the chicken tenders here. I used to come here sometimes when I was an undergrad at San Jose State.";
+    }
+
 }
 
 @end

@@ -13,6 +13,8 @@
 @end
 
 @implementation LocationViewController
+@synthesize label;
+@synthesize data;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -25,6 +27,8 @@
 
 - (void)viewDidLoad
 {
+ //   label.text = @"FILE";
+    label.text = data;
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }
@@ -39,7 +43,5 @@
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
-
-
 
 @end

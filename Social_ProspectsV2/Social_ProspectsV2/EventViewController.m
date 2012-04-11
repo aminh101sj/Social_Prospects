@@ -7,6 +7,7 @@
 //
 
 #import "EventViewController.h"
+#import "LocationViewController.h"
 
 @interface EventViewController ()
 
@@ -14,6 +15,10 @@
 
 @implementation EventViewController
 @synthesize bio;
+@synthesize titleText;
+@synthesize image;
+@synthesize bioText;
+@synthesize imageURL;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,14 +31,21 @@
 
 - (void)viewDidLoad
 {
-    self.bio.text = @"New Bio";
-    self.title = @"Bio Page";
+    self.bio.text = bioText;
+    self.title = titleText;
     [super viewDidLoad];
+    NSData *mydata = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:imageURL]];
+    image.image = [[UIImage alloc] initWithData:mydata];
 	// Do any additional setup after loading the view.
 }
 
 - (void)viewDidUnload
 {
+    self.bio = nil;
+    self.image = nil;
+    self.bioText = nil;
+    self.titleText = nil;
+    self.imageURL = nil;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }

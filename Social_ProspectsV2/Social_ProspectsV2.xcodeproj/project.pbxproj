@@ -455,6 +455,7 @@
 				06B548D515351F8800830D97 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		06B548D615351F8800830D97 /* Build configuration list for PBXNativeTarget "Social_ProspectsV2Tests" */ = {
 			isa = XCConfigurationList;
@@ -463,6 +464,7 @@
 				06B548D815351F8800830D97 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
