@@ -19,7 +19,7 @@
     NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
     NSError *parseError = nil;
     id jsonObject = [NSJSONSerialization JSONObjectWithData:response options:NSJSONReadingAllowFragments error:&parseError];
-    NSLog(@"Response: %@", [jsonObject objectForKey:@"places"]);
+//    NSLog(@"Response: %@", [jsonObject objectForKey:@"places"]);
     NSArray *places = [jsonObject objectForKey:@"places"];
     return YES;
 }
