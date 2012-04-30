@@ -28,6 +28,7 @@
 - (void)viewDidLoad
 {
  //   label.text = @"FILE";
+    self.title = data;
     label.text = data;
     [super viewDidLoad];
 	// Do any additional setup after loading the view.

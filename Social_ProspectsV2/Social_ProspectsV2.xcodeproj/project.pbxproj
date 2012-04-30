@@ -23,6 +23,12 @@
 		06B548D015351F8800830D97 /* Social_ProspectsV2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 06B548CF15351F8800830D97 /* Social_ProspectsV2Tests.m */; };
 		06B548E51535241300830D97 /* EventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06B548E41535241300830D97 /* EventViewController.m */; };
 		06B548E815352A0900830D97 /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06B548E715352A0900830D97 /* LocationViewController.m */; };
+		06C92306154F3411003EAA18 /* UITableViewCellAccessoryDisclosureIndicator.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 06C92302154F3410003EAA18 /* UITableViewCellAccessoryDisclosureIndicator.PNG */; };
+		06C92307154F3411003EAA18 /* UITableViewCellAccessoryDisclosureIndicator@2x.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 06C92303154F3410003EAA18 /* UITableViewCellAccessoryDisclosureIndicator@2x.PNG */; };
+		06C92308154F3411003EAA18 /* UITableViewCellAccessoryDisclosureIndicatorSelected.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 06C92304154F3410003EAA18 /* UITableViewCellAccessoryDisclosureIndicatorSelected.PNG */; };
+		06C92309154F3411003EAA18 /* UITableViewCellAccessoryDisclosureIndicatorSelected@2x.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 06C92305154F3410003EAA18 /* UITableViewCellAccessoryDisclosureIndicatorSelected@2x.PNG */; };
+		06C9230D154F341C003EAA18 /* GHCollapsingAndSpinningTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C9230C154F341C003EAA18 /* GHCollapsingAndSpinningTableViewCell.m */; };
+		06C92311154F343F003EAA18 /* UIExpandableTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C92310154F343F003EAA18 /* UIExpandableTableView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +66,14 @@
 		06B548E41535241300830D97 /* EventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventViewController.m; sourceTree = "<group>"; };
 		06B548E615352A0900830D97 /* LocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationViewController.h; sourceTree = "<group>"; };
 		06B548E715352A0900830D97 /* LocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationViewController.m; sourceTree = "<group>"; };
+		06C92302154F3410003EAA18 /* UITableViewCellAccessoryDisclosureIndicator.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UITableViewCellAccessoryDisclosureIndicator.PNG; sourceTree = "<group>"; };
+		06C92303154F3410003EAA18 /* UITableViewCellAccessoryDisclosureIndicator@2x.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UITableViewCellAccessoryDisclosureIndicator@2x.PNG"; sourceTree = "<group>"; };
+		06C92304154F3410003EAA18 /* UITableViewCellAccessoryDisclosureIndicatorSelected.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UITableViewCellAccessoryDisclosureIndicatorSelected.PNG; sourceTree = "<group>"; };
+		06C92305154F3410003EAA18 /* UITableViewCellAccessoryDisclosureIndicatorSelected@2x.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UITableViewCellAccessoryDisclosureIndicatorSelected@2x.PNG"; sourceTree = "<group>"; };
+		06C9230B154F341C003EAA18 /* GHCollapsingAndSpinningTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHCollapsingAndSpinningTableViewCell.h; sourceTree = "<group>"; };
+		06C9230C154F341C003EAA18 /* GHCollapsingAndSpinningTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHCollapsingAndSpinningTableViewCell.m; sourceTree = "<group>"; };
+		06C9230F154F343F003EAA18 /* UIExpandableTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIExpandableTableView.h; path = ../UIExpandableTableView.h; sourceTree = "<group>"; };
+		06C92310154F343F003EAA18 /* UIExpandableTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIExpandableTableView.m; path = ../UIExpandableTableView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +133,8 @@
 		06B548A715351F8700830D97 /* Social_ProspectsV2 */ = {
 			isa = PBXGroup;
 			children = (
+				06C92312154F3457003EAA18 /* UIExpandableTableView */,
+				06C9230E154F3427003EAA18 /* Collapsing TableView Cell */,
 				FF7C68C315356DA1008D2D8D /* Storyboard */,
 				FF7C68C215356D96008D2D8D /* Delegate */,
 				FF7C68C015356D86008D2D8D /* Views */,
@@ -155,6 +171,28 @@
 				06B548CB15351F8800830D97 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		06C9230E154F3427003EAA18 /* Collapsing TableView Cell */ = {
+			isa = PBXGroup;
+			children = (
+				06C9230B154F341C003EAA18 /* GHCollapsingAndSpinningTableViewCell.h */,
+				06C9230C154F341C003EAA18 /* GHCollapsingAndSpinningTableViewCell.m */,
+				06C92302154F3410003EAA18 /* UITableViewCellAccessoryDisclosureIndicator.PNG */,
+				06C92303154F3410003EAA18 /* UITableViewCellAccessoryDisclosureIndicator@2x.PNG */,
+				06C92304154F3410003EAA18 /* UITableViewCellAccessoryDisclosureIndicatorSelected.PNG */,
+				06C92305154F3410003EAA18 /* UITableViewCellAccessoryDisclosureIndicatorSelected@2x.PNG */,
+			);
+			name = "Collapsing TableView Cell";
+			sourceTree = "<group>";
+		};
+		06C92312154F3457003EAA18 /* UIExpandableTableView */ = {
+			isa = PBXGroup;
+			children = (
+				06C9230F154F343F003EAA18 /* UIExpandableTableView.h */,
+				06C92310154F343F003EAA18 /* UIExpandableTableView.m */,
+			);
+			name = UIExpandableTableView;
 			sourceTree = "<group>";
 		};
 		FF7C68C015356D86008D2D8D /* Views */ = {
@@ -261,6 +299,10 @@
 				06B548AC15351F8700830D97 /* InfoPlist.strings in Resources */,
 				06B548B515351F8700830D97 /* MainStoryboard_iPhone.storyboard in Resources */,
 				06B548B815351F8700830D97 /* MainStoryboard_iPad.storyboard in Resources */,
+				06C92306154F3411003EAA18 /* UITableViewCellAccessoryDisclosureIndicator.PNG in Resources */,
+				06C92307154F3411003EAA18 /* UITableViewCellAccessoryDisclosureIndicator@2x.PNG in Resources */,
+				06C92308154F3411003EAA18 /* UITableViewCellAccessoryDisclosureIndicatorSelected.PNG in Resources */,
+				06C92309154F3411003EAA18 /* UITableViewCellAccessoryDisclosureIndicatorSelected@2x.PNG in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +342,8 @@
 				06B548BB15351F8700830D97 /* ViewController.m in Sources */,
 				06B548E51535241300830D97 /* EventViewController.m in Sources */,
 				06B548E815352A0900830D97 /* LocationViewController.m in Sources */,
+				06C9230D154F341C003EAA18 /* GHCollapsingAndSpinningTableViewCell.m in Sources */,
+				06C92311154F343F003EAA18 /* UIExpandableTableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,8 @@
 
 #import "EventViewController.h"
 #import "ViewController.h"
+#import "UIExpandableTableView.h"
+#import "GHCollapsingAndSpinningTableViewCell.h"
 
 @interface ViewController ()
 
@@ -17,6 +19,59 @@
 @synthesize eventList;
 @synthesize tableView;
 //@synthesize index;
+
+/*
+- (void)loadView {
+    self.tableView = [[UIExpandableTableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+}
+
+#pragma mark - Table view expandable view
+
+- (BOOL)tableView:(UIExpandableTableView *)tableView canExpandSection:(NSInteger)section {
+    // return YES, if the section should be expandable
+    return section == YES;
+}
+
+- (BOOL)tableView:(UIExpandableTableView *)tableView needsToDownloadDataForExpandableSection:(NSInteger)section {
+    // return YES, if you need to download data to expand this section. tableView will call tableView:downloadDataForExpandableSection: for this section
+    return !_didDownloadData;;
+}
+
+- (UITableViewCell<UIExpandingTableViewCell> *)tableView:(UIExpandableTableView *)tableView expandingCellForSection:(NSInteger)section {
+    // this cell will be displayed at IndexPath with section: section and row 0
+    NSString *CellIdientifier = @"GHCollapsingAndSpinningTableViewCell";
+    
+    GHCollapsingAndSpinningTableViewCell *cell = (GHCollapsingAndSpinningTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdientifier];
+    
+    if (cell == nil) {
+        cell = [[GHCollapsingAndSpinningTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdientifier];
+    }
+    
+    //He hardcoded it to be one...
+    cell.textLabel.text = @"Expand this section";
+    
+    
+    return cell;
+}
+ 
+ - (void)tableView:(UIExpandableTableView *)tableView downloadDataForExpandableSection:(NSInteger)section {
+ // download your data here
+ // call [tableView expandSection:section animated:YES]; if download was successful
+ // call [tableView cancelDownloadInSection:section]; if your download was NOT successful
+ // download your data here
+ double delayInSeconds = 2.0;
+ dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+ dispatch_after(popTime, dispatch_get_main_queue(), ^(void) {
+ // save your state, that you did download the data
+ _didDownloadData = YES;
+ // call [tableView cancelDownloadInSection:section]; if your download failed
+ _dataArray = [list copy];
+ 
+ // and expand this section after download completed
+ [tableView expandSection:section animated:YES];
+ } 
+ 
+ */
 
 - (void)viewDidLoad
 {
