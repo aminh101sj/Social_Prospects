@@ -8,26 +8,26 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Social_ProspectsV2/ViewController.m"
-         timestampString = "357582580.860751"
+         timestampString = "357585499.363435"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "79"
-         endingLineNumber = "79"
+         startingLineNumber = "87"
+         endingLineNumber = "87"
          landmarkName = "-viewDidLoad"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Social_ProspectsV2/ViewController.m"
-         timestampString = "357582867.717098"
+         timestampString = "357585499.363435"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "236"
-         endingLineNumber = "236"
-         landmarkName = "@implementation ViewController"
-         landmarkType = "3">
+         startingLineNumber = "248"
+         endingLineNumber = "248"
+         landmarkName = "-prepareForSegue:sender:"
+         landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>

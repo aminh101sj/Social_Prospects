@@ -19,7 +19,7 @@
 @end
 
 @implementation ViewController
-@synthesize eventList, eventLocations;
+@synthesize eventList, eventLocations, downloadData;
 //@synthesize index;
 
 - (void)loadView {
@@ -35,6 +35,13 @@
 
 - (BOOL)tableView:(UIExpandableTableView *)tableView needsToDownloadDataForExpandableSection:(NSInteger)section {
     // return YES, if you need to download data to expand this section. tableView will call tableView:downloadDataForExpandableSection: for this section
+    NSString *s = [downloadData objectAtIndex:section];
+    NSLog(@"THIS IS THE STRING: %@", s);
+    if(s == @"0"){
+        return YES;
+    } else {
+        return NO;
+    }
     return !_didDownloadData;
 }
 
@@ -65,6 +72,7 @@
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void) {
         // save your state, that you did download the data
         _didDownloadData = YES;
+        [self.downloadData insertObject:@"1" atIndex:section];
         // call [tableView cancelDownloadInSection:section]; if your download failed
         Location *col = [self.eventLocations objectAtIndex: section];
         _dataArray = [col.events copy];
@@ -90,15 +98,19 @@
     NSLog(@"PLACES: %@", places);
     NSMutableArray *names = [[NSMutableArray alloc] initWithCapacity:[places count]];
     NSMutableArray *locations = [[NSMutableArray alloc] initWithCapacity:[places count]];
+    NSMutableArray *download = [[NSMutableArray alloc] initWithCapacity:[places count]];
     Location *loc;
     Event *ev;
     NSArray *events;
     NSArray *coms;
     Comment *com;
     
+ 
     
     //populate the locaiton array
     for (NSDictionary * dict in places){
+        [download addObject:@"0"]; //set this to zero to indicate it has not been downloaded
+        
         loc = [[Location alloc] init];
         loc.name = [dict objectForKey:@"name"];
         loc.desc = [dict objectForKey:@"description"];
@@ -140,6 +152,7 @@
         [names addObject:name];
     }
     NSLog(@"greg: %@", names);
+    self.downloadData = download;
     self.eventList = names;
     self.eventLocations = locations;
     //NSLog(@"MINH Number of Sections: %ld", (long) [self.eventLocations count]);
@@ -209,7 +222,6 @@ tableView numberOfRowsInSection:(NSInteger)section
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    NSLog(@"SHOULD BE CALLED AFTER");
     NSIndexPath *index = [self.tableView indexPathForSelectedRow];
     EventViewController *evc = (EventViewController *)[segue destinationViewController];
     evc.titleText = [eventList objectAtIndex:(index.row-1)];
