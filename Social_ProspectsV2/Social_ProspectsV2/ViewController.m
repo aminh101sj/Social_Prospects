@@ -203,12 +203,12 @@ tableView numberOfRowsInSection:(NSInteger)section
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    NSLog(@"Section %i, Row %i", indexPath.section, indexPath.row);
     [self performSegueWithIdentifier:@"EventSegue" sender:self];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
+    NSLog(@"SHOULD BE CALLED AFTER");
     NSIndexPath *index = [self.tableView indexPathForSelectedRow];
     EventViewController *evc = (EventViewController *)[segue destinationViewController];
     evc.titleText = [eventList objectAtIndex:(index.row-1)];
