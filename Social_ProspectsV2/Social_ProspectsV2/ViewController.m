@@ -10,14 +10,15 @@
 #import "ViewController.h"
 #import "UIExpandableTableView.h"
 #import "GHCollapsingAndSpinningTableViewCell.h"
+#import "Location.h"
+#import "Event.h"
 
 @interface ViewController ()
 
 @end
 
 @implementation ViewController
-@synthesize eventList;
-//@synthesize tableView;
+@synthesize eventList, eventLocations;
 //@synthesize index;
 
 - (void)loadView {
@@ -64,11 +65,15 @@
         // save your state, that you did download the data
         _didDownloadData = YES;
         // call [tableView cancelDownloadInSection:section]; if your download failed
+        Location *col = [self.eventLocations objectAtIndex: section];
+        _dataArray = [col.events copy];
         
         // and expand this section after download completed
         [tableView expandSection:section animated:YES];
     });
 }
+
+#pragma mark - Regular provided template code
  
 - (void)viewDidLoad
 {
@@ -81,14 +86,47 @@
     //    NSLog(@"Response: %@", [jsonObject objectForKey:@"places"]);
     
     NSArray *places = [jsonObject objectForKey:@"places"];
+    NSLog(@"PLACES: %@", places);
     NSMutableArray *names = [[NSMutableArray alloc] initWithCapacity:[places count]];
+    NSMutableArray *locations = [[NSMutableArray alloc] initWithCapacity:[places count]];
+    Location *loc;
+    Event *ev;
+    NSArray *events;
     
+    //populate the locaiton array
     for (NSDictionary * dict in places){
+        loc = [[Location alloc] init];
+        loc.name = [dict objectForKey:@"name"];
+        loc.desc = [dict objectForKey:@"description"];
+        loc.img = [dict objectForKey:@"image"];
+        
         NSString *name = [dict objectForKey:@"name"];
+       // NSLog(@"Location:%@ Event:%@", name,[dict objectForKey:@"events"]);
+        events = [dict objectForKey:@"events"];
+        NSMutableArray *evA = [[NSMutableArray alloc] initWithCapacity:[events count]];
+       // NSLog(@"THIS IS HOW WE DO IT: %ld", (long)[events count]);
+        for (NSDictionary *d in events) {
+            ev = [[Event alloc] init];
+           // NSLog(@"ADDING %@", [d objectForKey:@"name"]);
+            ev.name = [d objectForKey:@"name"];
+            ev.desc = [d objectForKey:@"description"];
+            ev.rating = [d objectForKey:@"rating"];
+            [evA addObject:ev];
+         //   NSLog(@"IN ADDING EVENTS: %ld", (long)[evA count]);
+        }
+       // NSLog(@"EVENTS: %ld", (long)[evA count]);
+        loc.events = evA;
+       //  NSLog(@"AGAIN EVENTS: %ld", (long)[loc.events count]);
+        [locations addObject:loc];
         [names addObject:name];
     }
     NSLog(@"greg: %@", names);
     self.eventList = names;
+    self.eventLocations = locations;
+    //NSLog(@"MINH Number of Sections: %ld", (long) [self.eventLocations count]);
+    //Location *me = [self.eventLocations objectAtIndex:1];
+    //Event *me2 = [me.events objectAtIndex:0];
+    //NSLog(@"%ld", [me.events count]);
     self.title = @"Events";
 	// Do any additional setup after loading the view, typically from a nib.
     
@@ -115,14 +153,16 @@
 (UITableView *)tableView
 {
     // Return the number of sections.
-    return [self.eventList count];
+    return [self.eventLocations count];
 }
 
 - (NSInteger)tableView:(UITableView *)
 tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [self.eventList count];
+    //[self.eventLocations objectAtIndex: section];
+    Location *col = [self.eventLocations objectAtIndex:section];
+    return [col.events count]+1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -135,7 +175,10 @@ tableView numberOfRowsInSection:(NSInteger)section
                 reuseIdentifier:CellIdentifier];
     }
     // Configure the cell.
-    cell.textLabel.text = [self.eventList objectAtIndex: [indexPath row]];
+    
+    Event *ev = [_dataArray objectAtIndex:indexPath.row-1];
+    cell.textLabel.text = ev.name;
+    
     //cell.textLabel.text = @"Amazing";
     return cell;
 }

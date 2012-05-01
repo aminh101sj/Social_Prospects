@@ -10,16 +10,16 @@
 
 @interface ViewController : UITableViewController {
     NSArray *eventList;
-//    IBOutlet UITableView *tableView;
+    NSMutableArray *eventLocations;
 //    NSInteger index;
 @private
     BOOL _didDownloadData;
     
-    NSArray *_dataArray;
+    NSMutableArray *_dataArray;
 }
 
-//@property (nonatomic, retain) IBOutlet UITableView *tableView;
 @property (nonatomic, retain) NSArray *eventList;
+@property (nonatomic, retain) NSArray *eventLocations;
 //@property (nonatomic) NSInteger index;
 
 @end

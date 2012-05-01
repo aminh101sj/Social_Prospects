@@ -29,6 +29,8 @@
 		06C92309154F3411003EAA18 /* UITableViewCellAccessoryDisclosureIndicatorSelected@2x.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 06C92305154F3410003EAA18 /* UITableViewCellAccessoryDisclosureIndicatorSelected@2x.PNG */; };
 		06C9230D154F341C003EAA18 /* GHCollapsingAndSpinningTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C9230C154F341C003EAA18 /* GHCollapsingAndSpinningTableViewCell.m */; };
 		06C92311154F343F003EAA18 /* UIExpandableTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C92310154F343F003EAA18 /* UIExpandableTableView.m */; };
+		06C92325154FB32B003EAA18 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C92324154FB32B003EAA18 /* Location.m */; };
+		06C92329154FB636003EAA18 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C92328154FB636003EAA18 /* Event.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +76,10 @@
 		06C9230C154F341C003EAA18 /* GHCollapsingAndSpinningTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHCollapsingAndSpinningTableViewCell.m; sourceTree = "<group>"; };
 		06C9230F154F343F003EAA18 /* UIExpandableTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIExpandableTableView.h; path = ../UIExpandableTableView.h; sourceTree = "<group>"; };
 		06C92310154F343F003EAA18 /* UIExpandableTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIExpandableTableView.m; path = ../UIExpandableTableView.m; sourceTree = "<group>"; };
+		06C92323154FB32B003EAA18 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		06C92324154FB32B003EAA18 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
+		06C92327154FB636003EAA18 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		06C92328154FB636003EAA18 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +139,7 @@
 		06B548A715351F8700830D97 /* Social_ProspectsV2 */ = {
 			isa = PBXGroup;
 			children = (
+				06C92326154FB618003EAA18 /* Container Classes */,
 				06C92312154F3457003EAA18 /* UIExpandableTableView */,
 				06C9230E154F3427003EAA18 /* Collapsing TableView Cell */,
 				FF7C68C315356DA1008D2D8D /* Storyboard */,
@@ -193,6 +200,17 @@
 				06C92310154F343F003EAA18 /* UIExpandableTableView.m */,
 			);
 			name = UIExpandableTableView;
+			sourceTree = "<group>";
+		};
+		06C92326154FB618003EAA18 /* Container Classes */ = {
+			isa = PBXGroup;
+			children = (
+				06C92323154FB32B003EAA18 /* Location.h */,
+				06C92324154FB32B003EAA18 /* Location.m */,
+				06C92327154FB636003EAA18 /* Event.h */,
+				06C92328154FB636003EAA18 /* Event.m */,
+			);
+			name = "Container Classes";
 			sourceTree = "<group>";
 		};
 		FF7C68C015356D86008D2D8D /* Views */ = {
@@ -344,6 +362,8 @@
 				06B548E815352A0900830D97 /* LocationViewController.m in Sources */,
 				06C9230D154F341C003EAA18 /* GHCollapsingAndSpinningTableViewCell.m in Sources */,
 				06C92311154F343F003EAA18 /* UIExpandableTableView.m in Sources */,
+				06C92325154FB32B003EAA18 /* Location.m in Sources */,
+				06C92329154FB636003EAA18 /* Event.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
