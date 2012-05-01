@@ -11,4 +11,5 @@
 @interface Comment : NSObject
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *comment;
+@property (nonatomic, copy) NSString *imageURL;
 @end

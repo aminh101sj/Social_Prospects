@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11D50b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="XME-GS-AnX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11D50d" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="XME-GS-AnX">
     <dependencies>
         <deployment defaultVersion="1296" identifier="iOS"/>
         <development defaultVersion="4200" identifier="xcode"/>
@@ -80,7 +80,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <connections>
-                                            <segue destination="Twj-qu-jli" kind="push" identifier="Comment" id="R3z-lq-im1"/>
+                                            <segue destination="Twj-qu-jli" kind="push" identifier="CommentSegue" id="4m9-OB-rBo"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -101,7 +101,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="jNt-dm-mHg" kind="push" id="AFB-in-8MS"/>
+                                    <segue destination="jNt-dm-mHg" kind="push" identifier="LocationSegue" id="AFB-in-8MS"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -148,9 +148,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Comment" id="ykI-Ng-pqc"/>
+                    <connections>
+                        <outlet property="commentText" destination="Gv1-gX-Mgn" id="qHB-Kb-kTz"/>
+                        <outlet property="commenterName" destination="YNT-rf-lz3" id="oXD-dC-TG7"/>
+                        <outlet property="imageUrl" destination="VKq-8Y-vyZ" id="cC3-oX-8e3"/>
+                    </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1074" y="759"/>
+            <point key="canvasLocation" x="1490" y="785"/>
         </scene>
         <!--Location View Controller-->
         <scene sceneID="HtI-8i-FFz">
@@ -233,6 +238,12 @@
     <classes>
         <class className="CommentViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CommentViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="mapIt:"/>
+                <relationship kind="outlet" name="commentText" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="commenterName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="imageUrl" candidateClass="UIImageView"/>
+            </relationships>
         </class>
         <class className="EventViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/EventViewController.h"/>

@@ -140,6 +140,7 @@
                 com = [[Comment alloc] init];
                 com.name = [a objectForKey:@"name"];
                 com.comment = [a objectForKey:@"comment"];
+                com.imageURL = [a objectForKey:@"image"];
                 [comA addObject:com];
                 //NSLog(@"NUMBER OF COMMENTS: %ld", (long)[comA count]);
             }
@@ -245,7 +246,7 @@ tableView numberOfRowsInSection:(NSInteger)section
         evc.titleText = ev.name;
         evc.bioText = ev.desc;
         evc.imageURL = ev.image;
-
+        evc.commentList = ev.comments;
 
         NSMutableArray *comments = [[NSMutableArray alloc] initWithCapacity:[ev.comments count]];
         for (Comment * com in ev.comments){
@@ -255,8 +256,6 @@ tableView numberOfRowsInSection:(NSInteger)section
         evc.eventList = comments;
     }
     else{
-        NSIndexPath *index = [self.tableView indexPathForSelectedRow];
-        CommentViewController *cvc = (CommentViewController *)[segue destinationViewController];
         
     }
     

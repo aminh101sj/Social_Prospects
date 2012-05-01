@@ -9,6 +9,6 @@
 #import "Comment.h"
 
 @implementation Comment
-@synthesize name, comment;
+@synthesize name, comment, imageURL;
 
 @end

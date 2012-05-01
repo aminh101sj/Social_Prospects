@@ -13,6 +13,12 @@
 @end
 
 @implementation CommentViewController
+@synthesize commentText;
+@synthesize commenterName;
+@synthesize imageUrl;
+@synthesize commentData;
+@synthesize nameData;
+@synthesize imageData;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -25,6 +31,10 @@
 
 - (void)viewDidLoad
 {
+    NSData *mydata = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:imageData]];
+    imageUrl.image = [[UIImage alloc] initWithData:mydata];
+    commentText.text = commentData;
+    commenterName.text = nameData;
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }

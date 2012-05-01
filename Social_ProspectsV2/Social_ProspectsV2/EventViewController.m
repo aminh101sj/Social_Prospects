@@ -7,7 +7,9 @@
 //
 
 #import "EventViewController.h"
+#import "CommentViewController.h"
 #import "LocationViewController.h"
+#import "Comment.h"
 
 @interface EventViewController ()
 
@@ -20,6 +22,7 @@
 @synthesize bioText;
 @synthesize imageURL;
 @synthesize eventList;
+@synthesize commentList;
 @synthesize tableView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -86,11 +89,21 @@
     NSString *identifier;
     identifier = segue.identifier;
     if([identifier isEqualToString:@"LocationSegue"]){
-    NSIndexPath *index = [self.tableView indexPathForSelectedRow];
-    LocationViewController *evc = (LocationViewController *)[segue destinationViewController];
-    evc.data = [eventList objectAtIndex:(index.row)];
-    [self.tableView deselectRowAtIndexPath:index animated:YES]; 
+        NSIndexPath *index = [self.tableView indexPathForSelectedRow];
+        LocationViewController *evc = (LocationViewController *)[segue destinationViewController];
+        evc.data = [eventList objectAtIndex:(index.row)];
+        [self.tableView deselectRowAtIndexPath:index animated:YES]; 
     }
+    else{
+        NSIndexPath *index = [self.tableView indexPathForSelectedRow]; 
+        CommentViewController *evc = (CommentViewController *)[segue destinationViewController];
+        Comment *com = [self.commentList objectAtIndex:(index.row)];
+        
+        evc.imageData = com.imageURL;
+        evc.nameData = com.name;
+        evc.commentData = com.comment;
+    }
+
     
 }
 
