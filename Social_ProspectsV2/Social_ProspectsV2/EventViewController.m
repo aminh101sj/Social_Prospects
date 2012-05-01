@@ -21,6 +21,7 @@
 @synthesize imageURL;
 @synthesize eventList;
 @synthesize tableView;
+@synthesize eventLoc;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -35,6 +36,7 @@
 {
     self.bio.text = bioText;
     self.title = titleText;
+    NSLog(@"%@", eventLoc);
     [super viewDidLoad];
     NSData *mydata = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:imageURL]];
     image.image = [[UIImage alloc] initWithData:mydata];
@@ -86,6 +88,7 @@
     NSIndexPath *index = [self.tableView indexPathForSelectedRow];
     LocationViewController *evc = (LocationViewController *)[segue destinationViewController];
     evc.data = [eventList objectAtIndex:(index.row)];
+    evc.titleText = eventLoc;
     [self.tableView deselectRowAtIndexPath:index animated:YES]; 
     
 }

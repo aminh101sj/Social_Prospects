@@ -11,11 +11,12 @@
 @interface LocationViewController : UIViewController {
     IBOutlet UILabel *label;
     NSString *data;
-    
+    NSString *titleText;
 }
 
 -(IBAction)mapIt:(id)sender;
 
 @property (nonatomic, retain) IBOutlet UILabel *label;
 @property (nonatomic, retain) NSString *data;
+@property (nonatomic, retain) NSString *titleText;
 @end

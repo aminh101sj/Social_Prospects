@@ -228,6 +228,7 @@ tableView numberOfRowsInSection:(NSInteger)section
     NSIndexPath *index = [self.tableView indexPathForSelectedRow];
     EventViewController *evc = (EventViewController *)[segue destinationViewController];
     evc.titleText = [eventList objectAtIndex:(index.section)];
+    evc.eventLoc = [eventList objectAtIndex:(index.section)];
     [self.tableView deselectRowAtIndexPath:index animated:YES]; 
     
     Location *loc;
