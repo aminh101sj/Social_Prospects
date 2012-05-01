@@ -8,13 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
+@interface ViewController : UITableViewController {
     NSArray *eventList;
-    IBOutlet UITableView *tableView;
+//    IBOutlet UITableView *tableView;
 //    NSInteger index;
+@private
+    BOOL _didDownloadData;
+    
+    NSArray *_dataArray;
 }
 
-@property (nonatomic, retain) IBOutlet UITableView *tableView;
+//@property (nonatomic, retain) IBOutlet UITableView *tableView;
 @property (nonatomic, retain) NSArray *eventList;
 //@property (nonatomic) NSInteger index;
 

@@ -29,12 +29,12 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <connections>
-                                            <segue destination="gcb-6Y-nwP" kind="push" id="kwU-Uw-Q2C"/>
+                                            <segue destination="gcb-6Y-nwP" kind="push" identifier="EventSegue" id="kwU-Uw-Q2C"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="2" id="KlL-mG-k7y"/>
+                                    <outlet property="dataSource" destination="2" id="rVz-xr-bIP"/>
                                     <outlet property="delegate" destination="2" id="fCJ-6E-nI2"/>
                                 </connections>
                             </tableView>
@@ -42,12 +42,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="HFm-Dn-qiY"/>
-                    <connections>
-                        <outlet property="tableView" destination="UNn-gb-HVA" id="IJS-Nc-P2X"/>
-                    </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="620" y="145"/>
+            <point key="canvasLocation" x="620" y="157"/>
         </scene>
         <!--Event View Controller-->
         <scene sceneID="Xuk-dT-dwO">
@@ -166,11 +163,8 @@
                 <relationship kind="outlet" name="label" candidateClass="UILabel"/>
             </relationships>
         </class>
-        <class className="ViewController" superclassName="UIViewController">
+        <class className="ViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

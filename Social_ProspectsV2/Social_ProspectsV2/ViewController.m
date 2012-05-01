@@ -17,10 +17,9 @@
 
 @implementation ViewController
 @synthesize eventList;
-@synthesize tableView;
+//@synthesize tableView;
 //@synthesize index;
 
-/*
 - (void)loadView {
     self.tableView = [[UIExpandableTableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
 }
@@ -29,15 +28,16 @@
 
 - (BOOL)tableView:(UIExpandableTableView *)tableView canExpandSection:(NSInteger)section {
     // return YES, if the section should be expandable
-    return section == YES;
+    return YES;
 }
 
 - (BOOL)tableView:(UIExpandableTableView *)tableView needsToDownloadDataForExpandableSection:(NSInteger)section {
     // return YES, if you need to download data to expand this section. tableView will call tableView:downloadDataForExpandableSection: for this section
-    return !_didDownloadData;;
+    return !_didDownloadData;
 }
 
 - (UITableViewCell<UIExpandingTableViewCell> *)tableView:(UIExpandableTableView *)tableView expandingCellForSection:(NSInteger)section {
+ 
     // this cell will be displayed at IndexPath with section: section and row 0
     NSString *CellIdientifier = @"GHCollapsingAndSpinningTableViewCell";
     
@@ -48,37 +48,49 @@
     }
     
     //He hardcoded it to be one...
-    cell.textLabel.text = @"Expand this section";
-    
+    cell.textLabel.text = [self.eventList objectAtIndex: section];
     
     return cell;
 }
- 
- - (void)tableView:(UIExpandableTableView *)tableView downloadDataForExpandableSection:(NSInteger)section {
- // download your data here
- // call [tableView expandSection:section animated:YES]; if download was successful
- // call [tableView cancelDownloadInSection:section]; if your download was NOT successful
- // download your data here
- double delayInSeconds = 2.0;
- dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
- dispatch_after(popTime, dispatch_get_main_queue(), ^(void) {
- // save your state, that you did download the data
- _didDownloadData = YES;
- // call [tableView cancelDownloadInSection:section]; if your download failed
- _dataArray = [list copy];
- 
- // and expand this section after download completed
- [tableView expandSection:section animated:YES];
- } 
- 
- */
 
+- (void)tableView:(UIExpandableTableView *)tableView downloadDataForExpandableSection:(NSInteger)section {
+    // download your data here
+    // call [tableView expandSection:section animated:YES]; if download was successful
+    // call [tableView cancelDownloadInSection:section]; if your download was NOT successful
+    // download your data here
+    double delayInSeconds = 2.0;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void) {
+        // save your state, that you did download the data
+        _didDownloadData = YES;
+        // call [tableView cancelDownloadInSection:section]; if your download failed
+        
+        // and expand this section after download completed
+        [tableView expandSection:section animated:YES];
+    });
+}
+ 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-    self.eventList = [[NSArray alloc] initWithObjects: @"Philz", @"Smoke Eaters", @"Peanuts", nil];
+   
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://gre.gd/json.php"]];
+    NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+    NSError *parseError = nil;
+    id jsonObject = [NSJSONSerialization JSONObjectWithData:response options:NSJSONReadingAllowFragments error:&parseError];
+    //    NSLog(@"Response: %@", [jsonObject objectForKey:@"places"]);
+    
+    NSArray *places = [jsonObject objectForKey:@"places"];
+    NSMutableArray *names = [[NSMutableArray alloc] initWithCapacity:[places count]];
+    
+    for (NSDictionary * dict in places){
+        NSString *name = [dict objectForKey:@"name"];
+        [names addObject:name];
+    }
+    NSLog(@"greg: %@", names);
+    self.eventList = names;
     self.title = @"Events";
+	// Do any additional setup after loading the view, typically from a nib.
     
 }
 
@@ -103,7 +115,7 @@
 (UITableView *)tableView
 {
     // Return the number of sections.
-    return 1;
+    return [self.eventList count];
 }
 
 - (NSInteger)tableView:(UITableView *)
@@ -114,7 +126,6 @@ tableView numberOfRowsInSection:(NSInteger)section
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
     static NSString *CellIdentifier = @"Cell";
     
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -129,29 +140,36 @@ tableView numberOfRowsInSection:(NSInteger)section
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    [self performSegueWithIdentifier:@"EventSegue" sender:self];
+}
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
     NSIndexPath *index = [self.tableView indexPathForSelectedRow];
     EventViewController *evc = (EventViewController *)[segue destinationViewController];
     evc.titleText = [eventList objectAtIndex:(index.row)];
     [self.tableView deselectRowAtIndexPath:index animated:YES]; 
-
-    //NSLog(@"DIFFERENT %d", self.index);
-    if(evc.titleText == @"Philz") {
-        evc.imageURL = @"http://s3-media3.ak.yelpcdn.com/bphoto/HX0S_4Rb0VuhluHrEXGbUw/ms.jpg";
-        evc.bioText = @"Philz is where to go for real coffee.  I'm a latte kinda girl that finds amusement in seeing what kind of design the barista can do with froth.";
-        evc.eventList = [[NSArray alloc] initWithObjects: @"Hip Music", @"Hip Dances", @"Hip Central", nil];
+    
+    // Do any additional setup after loading the view, typically from a nib.
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://gre.gd/json.php?name=%@", evc.titleText]]];
+    NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+    NSError *parseError = nil;
+    id jsonObject = [NSJSONSerialization JSONObjectWithData:response options:NSJSONReadingAllowFragments error:&parseError];
+    NSLog(@"%@", jsonObject);
+    evc.bioText = [jsonObject objectForKey:@"description"];
+    evc.imageURL = [jsonObject objectForKey:@"image"];
+    
+    NSArray *events = [jsonObject objectForKey:@"events"];
+    NSMutableArray *eventNames = [[NSMutableArray alloc] initWithCapacity:[events count]];
+    for (NSDictionary * dict in events){
+        NSString *eventName = [dict objectForKey:@"name"];
+        [eventNames addObject:eventName];
     }
-    else if(evc.titleText == @"Peanuts") {
-        evc.imageURL = @"http://s3-media1.ak.yelpcdn.com/bphoto/2797QkRrZ4kUvKAeE_dJwQ/ms.jpg";
-        evc.bioText = @"Overall, Peanuts is a SJSU mainstay for great reason.";
-        evc.eventList = [[NSArray alloc] initWithObjects: @"Drunken Kung Fu", @"Drunken Master", @"Drunk Period", nil];
-    }
-    else if(evc.titleText == @"Smoke Eaters") {
-        evc.imageURL = @"http://s3-media1.ak.yelpcdn.com/bphoto/1-lHpG20Olbh_oIicvkQPw/ms.jpg";
-        evc.bioText = @"Love the chicken tenders here. I used to come here sometimes when I was an undergrad at San Jose State.";
-        evc.eventList = [[NSArray alloc] initWithObjects: @"Hot Wings", @"Hot Fries", @"Hot Chicks en", nil];
-    }
-
+    evc.eventList = eventNames;
+    
 }
 
 @end

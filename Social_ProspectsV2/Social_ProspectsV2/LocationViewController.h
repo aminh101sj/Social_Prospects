@@ -11,6 +11,7 @@
 @interface LocationViewController : UIViewController {
     IBOutlet UILabel *label;
     NSString *data;
+    
 }
 
 @property (nonatomic, retain) IBOutlet UILabel *label;
