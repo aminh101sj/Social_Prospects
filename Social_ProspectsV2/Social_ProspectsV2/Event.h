@@ -13,6 +13,7 @@
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *desc;
 @property (nonatomic, copy) NSString *rating;
+@property (nonatomic, copy) NSString *image;
 @property (nonatomic, copy) NSMutableArray *comments;
 
 @end
