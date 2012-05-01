@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11D50d" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="XME-GS-AnX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11D50b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="XME-GS-AnX">
     <dependencies>
         <deployment defaultVersion="1296" identifier="iOS"/>
         <development defaultVersion="4200" identifier="xcode"/>
@@ -80,7 +80,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <connections>
-                                            <segue destination="Twj-qu-jli" kind="push" id="R3z-lq-im1"/>
+                                            <segue destination="Twj-qu-jli" kind="push" identifier="Comment" id="R3z-lq-im1"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -117,7 +117,7 @@
             </objects>
             <point key="canvasLocation" x="1068" y="145"/>
         </scene>
-        <!--Comment View Controller-->
+        <!--Comment View Controller - Comment-->
         <scene sceneID="TfM-FS-q3L">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aYI-ch-EF2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -147,7 +147,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ykI-Ng-pqc"/>
+                    <navigationItem key="navigationItem" title="Comment" id="ykI-Ng-pqc"/>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="1074" y="759"/>
@@ -166,7 +166,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" id="8EJ-DS-afI">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="Cell" id="8EJ-DS-afI">
                                         <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -231,6 +231,9 @@
         </scene>
     </scenes>
     <classes>
+        <class className="CommentViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CommentViewController.h"/>
+        </class>
         <class className="EventViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/EventViewController.h"/>
             <relationships>
