@@ -14,6 +14,8 @@
     
 }
 
+-(IBAction)mapIt:(id)sender;
+
 @property (nonatomic, retain) IBOutlet UILabel *label;
 @property (nonatomic, retain) NSString *data;
 @end

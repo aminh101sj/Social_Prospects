@@ -45,4 +45,9 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+-(IBAction)mapIt:(id)sender{
+    UIApplication *app = [UIApplication sharedApplication];
+    [app openURL:[NSURL URLWithString:@"http://maps.google.com/maps?q='San Jose State University'"]];
+}
+
 @end
