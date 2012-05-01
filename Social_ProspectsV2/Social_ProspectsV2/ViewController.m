@@ -193,7 +193,7 @@ tableView numberOfRowsInSection:(NSInteger)section
     
     NSIndexPath *index = [self.tableView indexPathForSelectedRow];
     EventViewController *evc = (EventViewController *)[segue destinationViewController];
-    evc.titleText = [eventList objectAtIndex:(index.row)];
+    evc.titleText = [eventList objectAtIndex:(index.row-1)];
     [self.tableView deselectRowAtIndexPath:index animated:YES]; 
     
     // Do any additional setup after loading the view, typically from a nib.
