@@ -31,6 +31,7 @@
 		06C92311154F343F003EAA18 /* UIExpandableTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C92310154F343F003EAA18 /* UIExpandableTableView.m */; };
 		06C92325154FB32B003EAA18 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C92324154FB32B003EAA18 /* Location.m */; };
 		06C92329154FB636003EAA18 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C92328154FB636003EAA18 /* Event.m */; };
+		06C9233015504287003EAA18 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C9232F15504287003EAA18 /* Comment.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,8 @@
 		06C92324154FB32B003EAA18 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
 		06C92327154FB636003EAA18 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
 		06C92328154FB636003EAA18 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
+		06C9232E15504287003EAA18 /* Comment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comment.h; sourceTree = "<group>"; };
+		06C9232F15504287003EAA18 /* Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comment.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +212,8 @@
 				06C92324154FB32B003EAA18 /* Location.m */,
 				06C92327154FB636003EAA18 /* Event.h */,
 				06C92328154FB636003EAA18 /* Event.m */,
+				06C9232E15504287003EAA18 /* Comment.h */,
+				06C9232F15504287003EAA18 /* Comment.m */,
 			);
 			name = "Container Classes";
 			sourceTree = "<group>";
@@ -364,6 +369,7 @@
 				06C92311154F343F003EAA18 /* UIExpandableTableView.m in Sources */,
 				06C92325154FB32B003EAA18 /* Location.m in Sources */,
 				06C92329154FB636003EAA18 /* Event.m in Sources */,
+				06C9233015504287003EAA18 /* Comment.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

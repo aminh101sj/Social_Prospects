@@ -12,6 +12,7 @@
 #import "GHCollapsingAndSpinningTableViewCell.h"
 #import "Location.h"
 #import "Event.h"
+#import "Comment.h"
 
 @interface ViewController ()
 
@@ -92,6 +93,9 @@
     Location *loc;
     Event *ev;
     NSArray *events;
+    NSArray *coms;
+    Comment *com;
+    
     
     //populate the locaiton array
     for (NSDictionary * dict in places){
@@ -105,12 +109,26 @@
         events = [dict objectForKey:@"events"];
         NSMutableArray *evA = [[NSMutableArray alloc] initWithCapacity:[events count]];
        // NSLog(@"THIS IS HOW WE DO IT: %ld", (long)[events count]);
-        for (NSDictionary *d in events) {
+        for (NSDictionary *d in events) {            
+            
             ev = [[Event alloc] init];
            // NSLog(@"ADDING %@", [d objectForKey:@"name"]);
             ev.name = [d objectForKey:@"name"];
             ev.desc = [d objectForKey:@"description"];
             ev.rating = [d objectForKey:@"rating"];
+            
+            coms = [d objectForKey:@"comments"];
+            NSMutableArray *comA = [[NSMutableArray alloc] initWithCapacity:[coms count]];
+            
+            for (NSDictionary *a in coms) {
+                com = [[Comment alloc] init];
+                com.name = [a objectForKey:@"name"];
+                com.comment = [a objectForKey:@"comment"];
+                [comA addObject:com];
+                //NSLog(@"NUMBER OF COMMENTS: %ld", (long)[comA count]);
+            }
+            ev.comments = comA;
+            //NSLog(@"EVA: %@", comA);
             [evA addObject:ev];
          //   NSLog(@"IN ADDING EVENTS: %ld", (long)[evA count]);
         }
