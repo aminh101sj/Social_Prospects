@@ -116,6 +116,7 @@
             ev.name = [d objectForKey:@"name"];
             ev.desc = [d objectForKey:@"description"];
             ev.rating = [d objectForKey:@"rating"];
+            ev.image = [d objectForKey:@"image"];
             
             coms = [d objectForKey:@"comments"];
             NSMutableArray *comA = [[NSMutableArray alloc] initWithCapacity:[coms count]];
@@ -219,17 +220,22 @@ tableView numberOfRowsInSection:(NSInteger)section
     NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
     NSError *parseError = nil;
     id jsonObject = [NSJSONSerialization JSONObjectWithData:response options:NSJSONReadingAllowFragments error:&parseError];
-//    NSLog(@"%@", jsonObject);
-    evc.bioText = [jsonObject objectForKey:@"description"];
-    evc.imageURL = [jsonObject objectForKey:@"image"];
+    Location *loc;
+    loc = [eventLocations objectAtIndex:0];
+    Event *ev;
+    ev = [loc.events objectAtIndex:(index.row-1)];
+    NSLog(@"laksdjf lasj%@", ev.name);
+    evc.titleText = ev.name;
+    evc.bioText = ev.desc;
+    evc.imageURL = ev.image;
+    NSLog(@"Comments %@", ev.comments);
     
-    NSArray *events = [jsonObject objectForKey:@"events"];
-    NSMutableArray *eventNames = [[NSMutableArray alloc] initWithCapacity:[events count]];
-    for (NSDictionary * dict in events){
-        NSString *eventName = [dict objectForKey:@"name"];
-        [eventNames addObject:eventName];
+    NSMutableArray *comments = [[NSMutableArray alloc] initWithCapacity:[ev.comments count]];
+    for (Comment * com in ev.comments){
+        NSString *comment = com.comment;
+        [comments addObject:comment];
     }
-    evc.eventList = eventNames;
+    evc.eventList = comments;
     
 }
 

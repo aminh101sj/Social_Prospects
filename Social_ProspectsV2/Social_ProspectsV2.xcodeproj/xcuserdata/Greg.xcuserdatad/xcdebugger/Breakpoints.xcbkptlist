@@ -13,7 +13,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "31"
          endingLineNumber = "31"
-         landmarkName = "-viewDidLoad"
+         landmarkName = "-tableView:canExpandSection:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

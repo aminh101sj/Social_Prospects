@@ -9,6 +9,6 @@
 #import "Event.h"
 
 @implementation Event
-@synthesize name, desc, rating, comments;
+@synthesize name, desc, rating, comments, image;
 
 @end
