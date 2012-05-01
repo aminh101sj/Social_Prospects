@@ -17,7 +17,12 @@
     NSString *imageURL;
     NSString *titleText;
     NSArray *eventList;
+<<<<<<< HEAD
     NSArray *commentList;
+=======
+    NSString *eventLoc;
+    NSMutableArray *eventLocations;
+>>>>>>> df7866940be64cbb77476a6c63aaa17d5fb394da
 }
 @property (nonatomic, retain) IBOutlet UILabel *bio;
 @property (nonatomic, retain) IBOutlet UIImageView *image;
@@ -26,5 +31,11 @@
 @property (nonatomic, retain) NSString *imageURL;
 @property (nonatomic, retain) NSString *titleText;
 @property (nonatomic, retain) NSArray *eventList;
+<<<<<<< HEAD
 @property (nonatomic, retain) NSArray *commentList;
+=======
+@property (nonatomic, retain) NSArray *eventLocations;
+@property (nonatomic, retain) NSString *eventLoc;
+
+>>>>>>> df7866940be64cbb77476a6c63aaa17d5fb394da
 @end

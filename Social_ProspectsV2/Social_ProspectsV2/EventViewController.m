@@ -24,6 +24,7 @@
 @synthesize eventList;
 @synthesize commentList;
 @synthesize tableView;
+@synthesize eventLoc;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -38,6 +39,7 @@
 {
     self.bio.text = bioText;
     self.title = titleText;
+    NSLog(@"%@", eventLoc);
     [super viewDidLoad];
     NSData *mydata = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:imageURL]];
     image.image = [[UIImage alloc] initWithData:mydata];
@@ -89,10 +91,18 @@
     NSString *identifier;
     identifier = segue.identifier;
     if([identifier isEqualToString:@"LocationSegue"]){
+<<<<<<< HEAD
         NSIndexPath *index = [self.tableView indexPathForSelectedRow];
         LocationViewController *evc = (LocationViewController *)[segue destinationViewController];
         evc.data = [eventList objectAtIndex:(index.row)];
         [self.tableView deselectRowAtIndexPath:index animated:YES]; 
+=======
+    NSIndexPath *index = [self.tableView indexPathForSelectedRow];
+    LocationViewController *evc = (LocationViewController *)[segue destinationViewController];
+    evc.data = [eventList objectAtIndex:(index.row)];
+    evc.titleText = eventLoc;
+    [self.tableView deselectRowAtIndexPath:index animated:YES]; 
+>>>>>>> df7866940be64cbb77476a6c63aaa17d5fb394da
     }
     else{
         NSIndexPath *index = [self.tableView indexPathForSelectedRow]; 

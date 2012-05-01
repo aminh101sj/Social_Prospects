@@ -8,6 +8,7 @@
 
 #import "LocationViewController.h"
 
+
 @interface LocationViewController ()
 
 @end
@@ -15,6 +16,7 @@
 @implementation LocationViewController
 @synthesize label;
 @synthesize data;
+@synthesize titleText;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,7 +30,7 @@
 - (void)viewDidLoad
 {
  //   label.text = @"FILE";
-    self.title = data;
+    self.title = titleText;
     label.text = data;
     [super viewDidLoad];
 	// Do any additional setup after loading the view.

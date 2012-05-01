@@ -227,6 +227,22 @@ tableView numberOfRowsInSection:(NSInteger)section
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+<<<<<<< HEAD
+    NSIndexPath *index = [self.tableView indexPathForSelectedRow];
+    EventViewController *evc = (EventViewController *)[segue destinationViewController];
+    evc.titleText = [eventList objectAtIndex:(index.section)];
+    evc.eventLoc = [eventList objectAtIndex:(index.section)];
+    [self.tableView deselectRowAtIndexPath:index animated:YES]; 
+    
+    Location *loc;
+    loc = [eventLocations objectAtIndex:index.section];
+    Event *ev;
+    ev = [loc.events objectAtIndex:(index.row-1)];
+    NSLog(@"this is what's inputted: %@", ev.name);
+    evc.titleText = ev.name;
+    evc.bioText = ev.desc;
+    evc.imageURL = ev.image;
+=======
     NSLog(@"ID of Sender: %@", segue.identifier);
     NSString *identifier;
     identifier = segue.identifier;
@@ -235,6 +251,7 @@ tableView numberOfRowsInSection:(NSInteger)section
         EventViewController *evc = (EventViewController *)[segue destinationViewController];
         evc.titleText = [eventList objectAtIndex:(index.section)];
         [self.tableView deselectRowAtIndexPath:index animated:YES]; 
+>>>>>>> 827da766a14f216d2583dd548f978e0a0f6fea5e
 
         NSLog(@"ID of Sender: %@", segue.identifier);
 
