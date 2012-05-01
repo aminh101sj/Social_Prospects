@@ -109,6 +109,7 @@
         events = [dict objectForKey:@"events"];
         NSMutableArray *evA = [[NSMutableArray alloc] initWithCapacity:[events count]];
        // NSLog(@"THIS IS HOW WE DO IT: %ld", (long)[events count]);
+        
         for (NSDictionary *d in events) {            
             
             ev = [[Event alloc] init];
@@ -204,7 +205,6 @@ tableView numberOfRowsInSection:(NSInteger)section
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
     [self performSegueWithIdentifier:@"EventSegue" sender:self];
 }
 
@@ -212,23 +212,18 @@ tableView numberOfRowsInSection:(NSInteger)section
     
     NSIndexPath *index = [self.tableView indexPathForSelectedRow];
     EventViewController *evc = (EventViewController *)[segue destinationViewController];
-    evc.titleText = [eventList objectAtIndex:(index.row-1)];
+    evc.titleText = [eventList objectAtIndex:(index.section)];
     [self.tableView deselectRowAtIndexPath:index animated:YES]; 
     
-    // Do any additional setup after loading the view, typically from a nib.
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://gre.gd/json.php?name=%@", evc.titleText]]];
-    NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
-    NSError *parseError = nil;
-    id jsonObject = [NSJSONSerialization JSONObjectWithData:response options:NSJSONReadingAllowFragments error:&parseError];
     Location *loc;
     loc = [eventLocations objectAtIndex:0];
     Event *ev;
     ev = [loc.events objectAtIndex:(index.row-1)];
-    NSLog(@"laksdjf lasj%@", ev.name);
+
     evc.titleText = ev.name;
     evc.bioText = ev.desc;
     evc.imageURL = ev.image;
-    NSLog(@"Comments %@", ev.comments);
+
     
     NSMutableArray *comments = [[NSMutableArray alloc] initWithCapacity:[ev.comments count]];
     for (Comment * com in ev.comments){
