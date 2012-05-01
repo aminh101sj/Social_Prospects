@@ -83,10 +83,14 @@
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    NSString *identifier;
+    identifier = segue.identifier;
+    if([identifier isEqualToString:@"LocationSegue"]){
     NSIndexPath *index = [self.tableView indexPathForSelectedRow];
     LocationViewController *evc = (LocationViewController *)[segue destinationViewController];
     evc.data = [eventList objectAtIndex:(index.row)];
     [self.tableView deselectRowAtIndexPath:index animated:YES]; 
+    }
     
 }
 
