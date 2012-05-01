@@ -40,9 +40,10 @@
     if(s == @"0"){
         return YES;
     } else {
+        [self.downloadData insertObject:@"0" atIndex:section];
         return NO;
     }
-    return !_didDownloadData;
+    return YES;
 }
 
 - (UITableViewCell<UIExpandingTableViewCell> *)tableView:(UIExpandableTableView *)tableView expandingCellForSection:(NSInteger)section {
@@ -67,7 +68,7 @@
     // call [tableView expandSection:section animated:YES]; if download was successful
     // call [tableView cancelDownloadInSection:section]; if your download was NOT successful
     // download your data here
-    double delayInSeconds = 2.0;
+    double delayInSeconds = 0.2;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void) {
         // save your state, that you did download the data
