@@ -158,7 +158,7 @@ tableView numberOfRowsInSection:(NSInteger)section
     NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
     NSError *parseError = nil;
     id jsonObject = [NSJSONSerialization JSONObjectWithData:response options:NSJSONReadingAllowFragments error:&parseError];
-    NSLog(@"%@", jsonObject);
+//    NSLog(@"%@", jsonObject);
     evc.bioText = [jsonObject objectForKey:@"description"];
     evc.imageURL = [jsonObject objectForKey:@"image"];
     
