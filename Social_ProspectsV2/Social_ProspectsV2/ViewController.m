@@ -7,6 +7,7 @@
 //
 
 #import "EventViewController.h"
+#import "CommentViewController.h"
 #import "ViewController.h"
 #import "UIExpandableTableView.h"
 #import "GHCollapsingAndSpinningTableViewCell.h"
@@ -225,27 +226,39 @@ tableView numberOfRowsInSection:(NSInteger)section
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    NSIndexPath *index = [self.tableView indexPathForSelectedRow];
-    EventViewController *evc = (EventViewController *)[segue destinationViewController];
-    evc.titleText = [eventList objectAtIndex:(index.section)];
-    [self.tableView deselectRowAtIndexPath:index animated:YES]; 
-    
-    Location *loc;
-    loc = [eventLocations objectAtIndex:index.section];
-    Event *ev;
-    ev = [loc.events objectAtIndex:(index.row-1)];
-    NSLog(@"this is what's inputted: %@", ev.name);
-    evc.titleText = ev.name;
-    evc.bioText = ev.desc;
-    evc.imageURL = ev.image;
+    NSLog(@"ID of Sender: %@", segue.identifier);
+    NSString *identifier;
+    identifier = segue.identifier;
+    if([identifier isEqualToString:@"EventSegue"]){
+        NSIndexPath *index = [self.tableView indexPathForSelectedRow];
+        EventViewController *evc = (EventViewController *)[segue destinationViewController];
+        evc.titleText = [eventList objectAtIndex:(index.section)];
+        [self.tableView deselectRowAtIndexPath:index animated:YES]; 
 
-    
-    NSMutableArray *comments = [[NSMutableArray alloc] initWithCapacity:[ev.comments count]];
-    for (Comment * com in ev.comments){
-        NSString *comment = com.comment;
-        [comments addObject:comment];
+        NSLog(@"ID of Sender: %@", segue.identifier);
+
+        Location *loc;
+        loc = [eventLocations objectAtIndex:index.section];
+        Event *ev;
+        ev = [loc.events objectAtIndex:(index.row-1)];
+        NSLog(@"this is what's inputted: %@", ev.name);
+        evc.titleText = ev.name;
+        evc.bioText = ev.desc;
+        evc.imageURL = ev.image;
+
+
+        NSMutableArray *comments = [[NSMutableArray alloc] initWithCapacity:[ev.comments count]];
+        for (Comment * com in ev.comments){
+            NSString *comment = com.comment;
+            [comments addObject:comment];
+        }
+        evc.eventList = comments;
     }
-    evc.eventList = comments;
+    else{
+        NSIndexPath *index = [self.tableView indexPathForSelectedRow];
+        CommentViewController *cvc = (CommentViewController *)[segue destinationViewController];
+        
+    }
     
 }
 

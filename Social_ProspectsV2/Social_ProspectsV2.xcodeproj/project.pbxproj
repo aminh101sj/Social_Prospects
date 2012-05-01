@@ -32,6 +32,7 @@
 		06C92325154FB32B003EAA18 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C92324154FB32B003EAA18 /* Location.m */; };
 		06C92329154FB636003EAA18 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C92328154FB636003EAA18 /* Event.m */; };
 		06C9233015504287003EAA18 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C9232F15504287003EAA18 /* Comment.m */; };
+		37FA4B9B15505C6F00B5E1A3 /* CommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FA4B9A15505C6F00B5E1A3 /* CommentViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,8 @@
 		06C92328154FB636003EAA18 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 		06C9232E15504287003EAA18 /* Comment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comment.h; sourceTree = "<group>"; };
 		06C9232F15504287003EAA18 /* Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comment.m; sourceTree = "<group>"; };
+		37FA4B9915505C6F00B5E1A3 /* CommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentViewController.h; sourceTree = "<group>"; };
+		37FA4B9A15505C6F00B5E1A3 /* CommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +226,8 @@
 			children = (
 				06B548B915351F8700830D97 /* ViewController.h */,
 				06B548BA15351F8700830D97 /* ViewController.m */,
+				37FA4B9915505C6F00B5E1A3 /* CommentViewController.h */,
+				37FA4B9A15505C6F00B5E1A3 /* CommentViewController.m */,
 				06B548E31535241200830D97 /* EventViewController.h */,
 				06B548E41535241300830D97 /* EventViewController.m */,
 				06B548E615352A0900830D97 /* LocationViewController.h */,
@@ -370,6 +375,7 @@
 				06C92325154FB32B003EAA18 /* Location.m in Sources */,
 				06C92329154FB636003EAA18 /* Event.m in Sources */,
 				06C9233015504287003EAA18 /* Comment.m in Sources */,
+				37FA4B9B15505C6F00B5E1A3 /* CommentViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
