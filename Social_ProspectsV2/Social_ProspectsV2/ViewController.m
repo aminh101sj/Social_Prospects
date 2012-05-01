@@ -230,10 +230,10 @@ tableView numberOfRowsInSection:(NSInteger)section
     [self.tableView deselectRowAtIndexPath:index animated:YES]; 
     
     Location *loc;
-    loc = [eventLocations objectAtIndex:0];
+    loc = [eventLocations objectAtIndex:index.section];
     Event *ev;
     ev = [loc.events objectAtIndex:(index.row-1)];
-
+    NSLog(@"this is what's inputted: %@", ev.name);
     evc.titleText = ev.name;
     evc.bioText = ev.desc;
     evc.imageURL = ev.image;
