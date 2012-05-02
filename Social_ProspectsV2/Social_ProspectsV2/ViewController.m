@@ -60,6 +60,7 @@
     
     //He hardcoded it to be one...
     cell.textLabel.text = [self.eventList objectAtIndex: section];
+    cell.textLabel.backgroundColor = [UIColor orangeColor];
     
     return cell;
 }
@@ -212,7 +213,6 @@ tableView numberOfRowsInSection:(NSInteger)section
     
     Event *ev = [_dataArray objectAtIndex:indexPath.row-1];
     cell.textLabel.text = ev.name;
-    
     //cell.textLabel.text = @"Amazing";
     return cell;
 }
@@ -251,13 +251,20 @@ tableView numberOfRowsInSection:(NSInteger)section
         evc.locDesc = loc.desc;
         evc.locImg = loc.img;
 
-
         NSMutableArray *comments = [[NSMutableArray alloc] initWithCapacity:[ev.comments count]];
         for (Comment * com in ev.comments){
             NSString *comment = com.comment;
             [comments addObject:comment];
         }
         evc.eventList = comments;
+        
+        
+        NSMutableArray *events = [[NSMutableArray alloc] initWithCapacity:[loc.events count]];
+        for (Event * e in loc.events){
+            NSString *event = e.name;
+            [events addObject:event];
+        }
+        evc.locEvents = events;
     }
     else{
         

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LocationViewController : UIViewController {
+@interface LocationViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>{
 
     IBOutlet UILabel *name;
     IBOutlet UILabel *desc;
@@ -18,7 +18,7 @@
     NSString *titleText;
     NSString *imageURL;
     NSArray *eventList;
-
+    NSMutableArray *events;
 }
 
 -(IBAction)mapIt:(id)sender;
@@ -32,5 +32,6 @@
 @property (nonatomic, retain) NSString *titleText;
 @property (nonatomic, retain) NSString *imageURL;
 @property (nonatomic, retain) NSArray *eventList;
+@property (nonatomic, retain) NSMutableArray *events;
 
 @end
