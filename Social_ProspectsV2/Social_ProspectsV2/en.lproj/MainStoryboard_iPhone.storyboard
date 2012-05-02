@@ -211,6 +211,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="mapIt:" destination="jNt-dm-mHg" eventType="touchDown" id="dsf-Jc-gUs"/>
+                                </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Location Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="yU1-bY-kSs">
                                 <rect key="frame" x="136" y="49" width="158" height="66"/>
