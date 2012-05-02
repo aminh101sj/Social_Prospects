@@ -250,7 +250,7 @@ tableView numberOfRowsInSection:(NSInteger)section
         evc.locName = loc.name;
         evc.locDesc = loc.desc;
         evc.locImg = loc.img;
-        evc.locEvents = loc.events;
+
 
         NSMutableArray *comments = [[NSMutableArray alloc] initWithCapacity:[ev.comments count]];
         for (Comment * com in ev.comments){

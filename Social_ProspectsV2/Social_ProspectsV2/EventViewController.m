@@ -104,7 +104,8 @@
        // [self.tableView deselectRowAtIndexPath:index animated:YES]; 
 
     }
-    else{
+    else if ([identifier isEqualToString:@"CommentSegue"]) 
+    {
         NSIndexPath *index = [self.tableView indexPathForSelectedRow]; 
         CommentViewController *evc = (CommentViewController *)[segue destinationViewController];
         Comment *com = [self.commentList objectAtIndex:(index.row)];
@@ -112,6 +113,8 @@
         evc.imageData = com.imageURL;
         evc.nameData = com.name;
         evc.commentData = com.comment;
+    } else {
+        
     }
 
     

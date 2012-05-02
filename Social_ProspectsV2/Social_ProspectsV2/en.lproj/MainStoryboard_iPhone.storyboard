@@ -114,7 +114,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="bcM-H2-OZr"/>
+                    <navigationItem key="navigationItem" id="bcM-H2-OZr">
+                        <barButtonItem key="rightBarButtonItem" title="+" id="jgy-v8-mHY">
+                            <connections>
+                                <segue destination="Tad-el-UCG" kind="push" identifier="AddCommentSegue" id="UXi-QQ-XRM"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="bio" destination="7zK-EV-Fx2" id="Nae-2a-rOC"/>
                         <outlet property="image" destination="Csd-T5-AfG" id="U3t-vu-fgt"/>
@@ -170,6 +176,49 @@
                 </viewController>
             </objects>
             <point key="canvasLocation" x="1561" y="775"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="cDr-YI-ZNF">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MKR-fq-WKH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="Tad-el-UCG" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="w5y-Wp-yOf">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="knt-zp-KFw">
+                                <rect key="frame" x="20" y="105" width="275" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Add Comments:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="vNO-5T-ou2">
+                                <rect key="frame" x="20" y="75" width="125" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="CgW-11-NPY">
+                                <rect key="frame" x="20" y="33" width="275" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="User Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="ZWU-iM-cAS">
+                                <rect key="frame" x="20" y="5" width="91" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Duc-SD-jgs"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1546" y="-440"/>
         </scene>
         <!--Location View Controller-->
         <scene sceneID="HtI-8i-FFz">
