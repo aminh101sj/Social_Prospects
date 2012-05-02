@@ -250,7 +250,7 @@ tableView numberOfRowsInSection:(NSInteger)section
         evc.locName = loc.name;
         evc.locDesc = loc.desc;
         evc.locImg = loc.img;
-        evc.locEvents = loc.events;
+        //evc.locEvents = loc.events;
 
         NSMutableArray *comments = [[NSMutableArray alloc] initWithCapacity:[ev.comments count]];
         for (Comment * com in ev.comments){
@@ -258,6 +258,14 @@ tableView numberOfRowsInSection:(NSInteger)section
             [comments addObject:comment];
         }
         evc.eventList = comments;
+        
+        
+        NSMutableArray *events = [[NSMutableArray alloc] initWithCapacity:[loc.events count]];
+        for (Event * e in loc.events){
+            NSString *event = e.name;
+            [events addObject:event];
+        }
+        evc.locEvents = events;
     }
     else{
         

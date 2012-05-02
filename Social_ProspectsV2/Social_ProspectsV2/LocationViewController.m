@@ -19,6 +19,7 @@
 @synthesize descText;
 @synthesize titleText;
 @synthesize imageURL, eventList;
+@synthesize events;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -38,7 +39,7 @@
     self.title = self.titleText;
     NSData *mydata = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:imageURL]];
     image.image = [[UIImage alloc] initWithData:mydata];
-
+    NSLog(@"%@", self.eventList);
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }
@@ -52,6 +53,30 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (NSInteger) tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index{
+    return 1;
+}
+
+-(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section  {
+    return [self.eventList count];
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *CellIdentifier = @"Cell";
+    
+    UITableViewCell *cell = [self.tableView 
+                             dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] 
+                initWithStyle:UITableViewCellStyleDefault
+                reuseIdentifier:CellIdentifier];
+    }
+    // Configure the cell.
+    cell.textLabel.text = [self.eventList objectAtIndex: [indexPath row]];
+    //cell.textLabel.text = @"Amazing";
+    return cell;
 }
 
 -(IBAction)mapIt:(id)sender{
