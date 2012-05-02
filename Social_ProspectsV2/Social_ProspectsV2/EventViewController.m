@@ -91,18 +91,13 @@
     NSString *identifier;
     identifier = segue.identifier;
     if([identifier isEqualToString:@"LocationSegue"]){
-<<<<<<< HEAD
+
         NSIndexPath *index = [self.tableView indexPathForSelectedRow];
         LocationViewController *evc = (LocationViewController *)[segue destinationViewController];
         evc.data = [eventList objectAtIndex:(index.row)];
+        evc.titleText = eventLoc;
         [self.tableView deselectRowAtIndexPath:index animated:YES]; 
-=======
-    NSIndexPath *index = [self.tableView indexPathForSelectedRow];
-    LocationViewController *evc = (LocationViewController *)[segue destinationViewController];
-    evc.data = [eventList objectAtIndex:(index.row)];
-    evc.titleText = eventLoc;
-    [self.tableView deselectRowAtIndexPath:index animated:YES]; 
->>>>>>> df7866940be64cbb77476a6c63aaa17d5fb394da
+
     }
     else{
         NSIndexPath *index = [self.tableView indexPathForSelectedRow]; 
