@@ -33,6 +33,7 @@
 		06C92329154FB636003EAA18 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C92328154FB636003EAA18 /* Event.m */; };
 		06C9233015504287003EAA18 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C9232F15504287003EAA18 /* Comment.m */; };
 		37FA4B9B15505C6F00B5E1A3 /* CommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FA4B9A15505C6F00B5E1A3 /* CommentViewController.m */; };
+		FFB5FBEF1550E33C00C585C9 /* AddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB5FBEE1550E33C00C585C9 /* AddViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,8 @@
 		06C9232F15504287003EAA18 /* Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comment.m; sourceTree = "<group>"; };
 		37FA4B9915505C6F00B5E1A3 /* CommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentViewController.h; sourceTree = "<group>"; };
 		37FA4B9A15505C6F00B5E1A3 /* CommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentViewController.m; sourceTree = "<group>"; };
+		FFB5FBED1550E33C00C585C9 /* AddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddViewController.h; sourceTree = "<group>"; };
+		FFB5FBEE1550E33C00C585C9 /* AddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +235,8 @@
 				06B548E715352A0900830D97 /* LocationViewController.m */,
 				37FA4B9915505C6F00B5E1A3 /* CommentViewController.h */,
 				37FA4B9A15505C6F00B5E1A3 /* CommentViewController.m */,
+				FFB5FBED1550E33C00C585C9 /* AddViewController.h */,
+				FFB5FBEE1550E33C00C585C9 /* AddViewController.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -376,6 +381,7 @@
 				06C92329154FB636003EAA18 /* Event.m in Sources */,
 				06C9233015504287003EAA18 /* Comment.m in Sources */,
 				37FA4B9B15505C6F00B5E1A3 /* CommentViewController.m in Sources */,
+				FFB5FBEF1550E33C00C585C9 /* AddViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
