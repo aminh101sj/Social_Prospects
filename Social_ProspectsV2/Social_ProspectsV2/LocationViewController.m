@@ -14,9 +14,13 @@
 @end
 
 @implementation LocationViewController
-@synthesize label;
 @synthesize data;
 @synthesize titleText;
+@synthesize locAddress;
+@synthesize imgUrl;
+@synthesize locName;
+@synthesize locDesc;
+@synthesize locDescription;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,9 +33,9 @@
 
 - (void)viewDidLoad
 {
- //   label.text = @"FILE";
     self.title = titleText;
-    label.text = data;
+    self.locName.text = titleText;
+    self.locDesc.text = locDescription;
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }
@@ -49,7 +53,8 @@
 
 -(IBAction)mapIt:(id)sender{
     UIApplication *app = [UIApplication sharedApplication];
-    [app openURL:[NSURL URLWithString:@"http://maps.google.com/maps?q='San Jose State University'"]];
+    
+    [app openURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://maps.google.com/maps?q='%@'",locAddress]]];
 }
 
 @end

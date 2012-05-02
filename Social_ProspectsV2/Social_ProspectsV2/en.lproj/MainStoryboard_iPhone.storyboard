@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11D50d" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="XME-GS-AnX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11D50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="XME-GS-AnX">
     <dependencies>
         <deployment defaultVersion="1296" identifier="iOS"/>
         <development defaultVersion="4200" identifier="xcode"/>
@@ -212,6 +212,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="1UE-dR-frL"/>
+                    <connections>
+                        <outlet property="locDesc" destination="yU1-bY-kSs" id="3gi-jd-1w2"/>
+                        <outlet property="locName" destination="e2y-ys-Arb" id="V6T-Mf-vgv"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="1561" y="137"/>
@@ -257,7 +261,8 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LocationViewController.h"/>
             <relationships>
                 <relationship kind="action" name="mapIt:"/>
-                <relationship kind="outlet" name="label" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="locDesc" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="locName" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="ViewController" superclassName="UITableViewController">

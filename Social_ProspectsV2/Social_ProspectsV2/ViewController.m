@@ -234,6 +234,7 @@ tableView numberOfRowsInSection:(NSInteger)section
         NSIndexPath *index = [self.tableView indexPathForSelectedRow];
         EventViewController *evc = (EventViewController *)[segue destinationViewController];
         evc.titleText = [eventList objectAtIndex:(index.section)];
+        evc.eventLoc = evc.titleText;
         [self.tableView deselectRowAtIndexPath:index animated:YES]; 
 
         NSLog(@"ID of Sender: %@", segue.identifier);
