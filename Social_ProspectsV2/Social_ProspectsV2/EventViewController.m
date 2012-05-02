@@ -25,6 +25,9 @@
 @synthesize commentList;
 @synthesize tableView;
 @synthesize eventLoc;
+@synthesize eventLocations;
+
+@synthesize locName, locImg, locDesc, locEvents;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -37,6 +40,7 @@
 
 - (void)viewDidLoad
 {
+    NSLog(@"LOCATION DATA: %@ %@ %@ %i", self.locName, self.locDesc, self.locImg, [self.locEvents count]);
     self.bio.text = bioText;
     self.title = titleText;
     NSLog(@"%@", eventLoc);
@@ -91,12 +95,13 @@
     NSString *identifier;
     identifier = segue.identifier;
     if([identifier isEqualToString:@"LocationSegue"]){
-
-        NSIndexPath *index = [self.tableView indexPathForSelectedRow];
+        
         LocationViewController *evc = (LocationViewController *)[segue destinationViewController];
-        evc.data = [eventList objectAtIndex:(index.row)];
-        evc.titleText = eventLoc;
-        [self.tableView deselectRowAtIndexPath:index animated:YES]; 
+        evc.descText = self.locDesc;
+        evc.titleText = self.locName;
+        evc.imageURL = self.locImg;
+        evc.eventList = self.locEvents;
+       // [self.tableView deselectRowAtIndexPath:index animated:YES]; 
 
     }
     else{

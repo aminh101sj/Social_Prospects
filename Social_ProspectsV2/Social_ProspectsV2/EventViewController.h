@@ -22,6 +22,13 @@
 
     NSString *eventLoc;
     NSMutableArray *eventLocations;
+    
+    //Keep Location Data that was selected
+    NSString *locName;
+    NSString *locDesc;
+    NSString *locImg;
+    NSMutableArray *locEvents;
+    
 
 }
 @property (nonatomic, retain) IBOutlet UILabel *bio;
@@ -36,5 +43,10 @@
 
 @property (nonatomic, retain) NSArray *eventLocations;
 @property (nonatomic, retain) NSString *eventLoc;
+
+@property (nonatomic, retain) NSString *locName;
+@property (nonatomic, retain) NSString *locDesc;
+@property (nonatomic, retain) NSString *locImg;
+@property (nonatomic, retain) NSMutableArray *locEvents;
 
 @end

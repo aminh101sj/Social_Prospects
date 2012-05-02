@@ -107,8 +107,6 @@
     NSArray *coms;
     Comment *com;
     
- 
-    
     //populate the locaiton array
     for (NSDictionary * dict in places){
         [download addObject:@"0"]; //set this to zero to indicate it has not been downloaded
@@ -242,11 +240,16 @@ tableView numberOfRowsInSection:(NSInteger)section
         loc = [eventLocations objectAtIndex:index.section];
         Event *ev;
         ev = [loc.events objectAtIndex:(index.row-1)];
-        NSLog(@"this is what's inputted: %@", ev.name);
         evc.titleText = ev.name;
         evc.bioText = ev.desc;
         evc.imageURL = ev.image;
         evc.commentList = ev.comments;
+        
+        //store location data
+        evc.locName = loc.name;
+        evc.locDesc = loc.desc;
+        evc.locImg = loc.img;
+        evc.locEvents = loc.events;
 
         NSMutableArray *comments = [[NSMutableArray alloc] initWithCapacity:[ev.comments count]];
         for (Comment * com in ev.comments){

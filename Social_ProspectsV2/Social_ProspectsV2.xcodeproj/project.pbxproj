@@ -226,12 +226,12 @@
 			children = (
 				06B548B915351F8700830D97 /* ViewController.h */,
 				06B548BA15351F8700830D97 /* ViewController.m */,
-				37FA4B9915505C6F00B5E1A3 /* CommentViewController.h */,
-				37FA4B9A15505C6F00B5E1A3 /* CommentViewController.m */,
 				06B548E31535241200830D97 /* EventViewController.h */,
 				06B548E41535241300830D97 /* EventViewController.m */,
 				06B548E615352A0900830D97 /* LocationViewController.h */,
 				06B548E715352A0900830D97 /* LocationViewController.m */,
+				37FA4B9915505C6F00B5E1A3 /* CommentViewController.h */,
+				37FA4B9A15505C6F00B5E1A3 /* CommentViewController.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";

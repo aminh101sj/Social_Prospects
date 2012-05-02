@@ -9,14 +9,24 @@
 #import <UIKit/UIKit.h>
 
 @interface LocationViewController : UIViewController {
-    IBOutlet UILabel *label;
-    NSString *data;
+    IBOutlet UILabel *name;
+    IBOutlet UILabel *desc;
+    IBOutlet UIImageView *image;
+    IBOutlet UITableView *tableView;
+    NSString *descText;
     NSString *titleText;
+    NSString *imageURL;
+    NSArray *eventList;
 }
 
 -(IBAction)mapIt:(id)sender;
 
-@property (nonatomic, retain) IBOutlet UILabel *label;
-@property (nonatomic, retain) NSString *data;
+@property (nonatomic, retain) IBOutlet UILabel *name;
+@property (nonatomic, retain) IBOutlet UILabel *desc;
+@property (nonatomic, retain) IBOutlet UIImageView *image;
+@property (nonatomic, retain) IBOutlet UITableView *tableView;
+@property (nonatomic, retain) NSString *descText;
 @property (nonatomic, retain) NSString *titleText;
+@property (nonatomic, retain) NSString *imageURL;
+@property (nonatomic, retain) NSArray *eventList;
 @end

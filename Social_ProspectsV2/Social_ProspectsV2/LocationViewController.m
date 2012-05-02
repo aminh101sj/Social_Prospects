@@ -14,9 +14,10 @@
 @end
 
 @implementation LocationViewController
-@synthesize label;
-@synthesize data;
+@synthesize name, desc, image, tableView;
+@synthesize descText;
 @synthesize titleText;
+@synthesize imageURL, eventList;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,9 +30,11 @@
 
 - (void)viewDidLoad
 {
- //   label.text = @"FILE";
-    self.title = titleText;
-    label.text = data;
+    self.name.text = self.titleText;
+    self.desc.text = self.descText;
+    self.title = self.titleText;
+    NSData *mydata = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:imageURL]];
+    image.image = [[UIImage alloc] initWithData:mydata];
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }
