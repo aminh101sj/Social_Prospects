@@ -47,8 +47,10 @@
 -(IBAction)submitComment:(id)sender{
     username = userBox.text;
     userComment = commentBox.text;
-    NSLog(@"%@", username);
-    NSLog(@"%@", userComment);
+    NSString *requestURL = [NSString stringWithFormat:@"http://gre.gd/comment.php?name=%@&comment=%@", username, userComment];
+    NSLog(@"%@", requestURL);
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:requestURL]];
+    NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
 }
 
 @end
