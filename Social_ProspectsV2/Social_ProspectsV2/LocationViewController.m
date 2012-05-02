@@ -14,10 +14,12 @@
 @end
 
 @implementation LocationViewController
+
 @synthesize name, desc, image, tableView;
 @synthesize descText;
 @synthesize titleText;
 @synthesize imageURL, eventList;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -30,11 +32,13 @@
 
 - (void)viewDidLoad
 {
+
     self.name.text = self.titleText;
     self.desc.text = self.descText;
     self.title = self.titleText;
     NSData *mydata = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:imageURL]];
     image.image = [[UIImage alloc] initWithData:mydata];
+
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }
@@ -52,7 +56,8 @@
 
 -(IBAction)mapIt:(id)sender{
     UIApplication *app = [UIApplication sharedApplication];
-    [app openURL:[NSURL URLWithString:@"http://maps.google.com/maps?q='San Jose State University'"]];
+    
+  //  [app openURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://maps.google.com/maps?q='%@'",locAddress]]];
 }
 
 @end

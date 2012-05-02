@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface LocationViewController : UIViewController {
+
     IBOutlet UILabel *name;
     IBOutlet UILabel *desc;
     IBOutlet UIImageView *image;
@@ -17,9 +18,11 @@
     NSString *titleText;
     NSString *imageURL;
     NSArray *eventList;
+
 }
 
 -(IBAction)mapIt:(id)sender;
+
 
 @property (nonatomic, retain) IBOutlet UILabel *name;
 @property (nonatomic, retain) IBOutlet UILabel *desc;
@@ -29,4 +32,5 @@
 @property (nonatomic, retain) NSString *titleText;
 @property (nonatomic, retain) NSString *imageURL;
 @property (nonatomic, retain) NSArray *eventList;
+
 @end
